@@ -1,5 +1,6 @@
-import { Button } from '@/components/ui/button'
 import { Github, Linkedin, Mail } from 'lucide-react'
+import { HeroButton } from './hero-button'
+import { HeroLink } from './hero-link'
 
 export function Hero() {
   return (
@@ -20,41 +21,32 @@ export function Hero() {
           </div>
 
           <div className="flex gap-4">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90"
-            >
-              <Mail className="w-4 h-4 mr-2" />
-              Get In Touch
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-            >
-              <Github className="w-4 h-4 mr-2" />
-              GitHub
-            </Button>
+            <HeroButton
+              icon={<Mail className="w-4 h-4 mr-2" />}
+              text="Get In Touch"
+              hrefTo={'email'}
+            />
+            <HeroButton
+              icon={<Github className="w-4 h-4 mr-2" />}
+              text="GitHub"
+              hrefTo={'github'}
+              variant={'outline'}
+            />
           </div>
 
           <div className="flex gap-6 pt-4">
-            <a
-              href="#"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Github className="w-6 h-6" />
-            </a>
-            <a
-              href="#"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href="#"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Mail className="w-6 h-6" />
-            </a>
+            <HeroLink
+              icon={<Github className="w-6 h-6" />}
+              hrefTo="github"
+            />
+            <HeroLink
+              icon={<Linkedin className="w-6 h-6" />}
+              hrefTo="linkedin"
+            />
+            <HeroLink
+              icon={<Mail className="w-6 h-6" />}
+              hrefTo="email"
+            />
           </div>
         </div>
 
