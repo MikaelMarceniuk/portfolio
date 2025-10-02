@@ -1,5 +1,7 @@
 import { Badge } from '@/components/ui/badge'
+import { useTranslations } from 'next-intl'
 
+// TODO Implement translation here
 const skillCategories = [
   {
     title: 'Frontend',
@@ -32,6 +34,8 @@ const skillCategories = [
 ]
 
 export function Skills() {
+  const t = useTranslations()
+
   return (
     <section
       id="skills"
@@ -43,17 +47,16 @@ export function Skills() {
             <div className="space-y-2">
               <div className="w-16 h-px bg-primary"></div>
               <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                Skills
+                {t('skills.section')}
               </h2>
             </div>
 
             <h3 className="text-3xl lg:text-4xl font-bold text-balance">
-              Frontend, Backend & Full-stack development
+              {t('skills.title')}
             </h3>
 
             <p className="text-lg text-muted-foreground max-w-2xl">
-              I focus on creating maintainable, scalable solutions that grow
-              with your business needs.
+              {t('skills.subtitle')}
             </p>
           </div>
 

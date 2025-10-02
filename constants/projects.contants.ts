@@ -1,5 +1,6 @@
 import { Project } from '@/types/project.types'
 
+// TODO Implement translations here
 export const projects: Project[] = [
   {
     name: 'EcoCommerce Platform',

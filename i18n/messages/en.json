@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "name": "Mikael Marceniuk",
+    "title": "Full-Stack Developer",
+    "subtitle": "I build scalable web solutions with Node.js, React, and TypeScript.",
+    "cta": {
+      "contact": "Get In Touch",
+      "github": "GitHub"
+    },
+    "social": {
+      "coffee": "// Coffee enthusiast & code craftsman"
+    }
+  },
+  "about": {
+    "section": "About",
+    "title": "Specialized in modern JavaScript ecosystems",
+    "paragraphs": {
+      "first": "I specialize in building end-to-end web applications using cutting-edge technologies like React, Next.js, NestJS, and TypeScript. My approach combines clean, maintainable code with performance optimization, resulting in applications that scale efficiently and deliver exceptional user experiences.",
+      "second": "I've helped startups reduce deployment time by 60% and enterprises improve application performance by 40% through strategic architecture decisions and modern development practices.",
+      "third": "Currently, I'm a Senior Full-Stack Developer specializing in accessibility and performance optimization. I contribute to the creation and maintenance of scalable applications that meet modern web standards and best practices to deliver inclusive user experiences.",
+      "fourth": "When I'm not coding, you'll find me exploring new coffee brewing techniques – precision matters in both code and coffee."
+    }
+  },
+  "skills": {
+    "section": "Skills",
+    "title": "Frontend, Backend & Full-stack development",
+    "subtitle": "I focus on creating maintainable, scalable solutions that grow with your business needs."
+  },
+  "projects": {
+    "section": "Projects",
+    "title": "Portfolio includes e-commerce platforms, SaaS applications, and API integrations",
+    "subtitle": "Each project showcases my ability to translate complex requirements into elegant, performant solutions with measurable business impact."
+  },
+  "contact": {
+    "section": "Contact",
+    "title": "Ready to collaborate? Let's build something amazing together.",
+    "subtitle": "I'm actively seeking full-time opportunities and freelance projects where I can contribute my technical expertise and passion for innovation. Whether you're a startup looking to build your MVP or an established company needing to scale your platform, I'm ready to help you achieve your goals.",
+    "availability": "Available for full-time positions and freelance projects"
+  }
+}

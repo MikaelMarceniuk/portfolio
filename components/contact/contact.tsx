@@ -1,8 +1,11 @@
 import { Mail, Github, Linkedin, Coffee } from 'lucide-react'
 import { ContactCard } from './contact-card'
 import { CoffeButton } from './coffe-button'
+import { useTranslations } from 'next-intl'
 
 export function Contact() {
+  const t = useTranslations()
+
   return (
     <section
       id="contact"
@@ -14,20 +17,16 @@ export function Contact() {
             <div className="space-y-2">
               <div className="w-16 h-px bg-primary mx-auto"></div>
               <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                Contact
+                {t('contact.section')}
               </h2>
             </div>
 
             <h3 className="text-3xl lg:text-4xl font-bold text-balance">
-              Ready to collaborate? Let's build something amazing together.
+              {t('contact.title')}
             </h3>
 
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I'm actively seeking full-time opportunities and freelance
-              projects where I can contribute my technical expertise and passion
-              for innovation. Whether you're a startup looking to build your MVP
-              or an established company needing to scale your platform, I'm
-              ready to help you achieve your goals.
+              {t('contact.subtitle')}
             </p>
           </div>
 
@@ -55,7 +54,7 @@ export function Contact() {
           <div className="space-y-6">
             <CoffeButton />
             <p className="text-sm text-muted-foreground">
-              Available for full-time positions and freelance projects
+              {t('contact.availability')}
             </p>
           </div>
         </div>

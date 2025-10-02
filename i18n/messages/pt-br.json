@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "name": "Mikael Marceniuk",
+    "title": "Desenvolvedor Full-Stack",
+    "subtitle": "Construo soluções web escaláveis com Node.js, React e TypeScript.",
+    "cta": {
+      "contact": "Entre em Contato",
+      "github": "GitHub"
+    },
+    "social": {
+      "coffee": "// Entusiasta de café & artesão de código"
+    }
+  },
+  "about": {
+    "section": "Sobre",
+    "title": "Especializado em ecossistemas modernos de JavaScript",
+    "paragraphs": {
+      "first": "Sou especializado em construir aplicações web completas utilizando tecnologias de ponta como React, Next.js, NestJS e TypeScript. Minha abordagem combina código limpo e de fácil manutenção com otimização de performance, resultando em aplicações escaláveis e com experiências excepcionais para os usuários.",
+      "second": "Ajudei startups a reduzir o tempo de deploy em 60% e grandes empresas a melhorarem a performance de suas aplicações em 40% através de decisões estratégicas de arquitetura e práticas modernas de desenvolvimento.",
+      "third": "Atualmente sou Desenvolvedor Full-Stack Sênior, com foco em acessibilidade e otimização de performance. Contribuo para a criação e manutenção de aplicações escaláveis que seguem padrões modernos da web e melhores práticas para oferecer experiências inclusivas.",
+      "fourth": "Quando não estou programando, você provavelmente me encontrará explorando novas técnicas de preparo de café – precisão importa tanto no código quanto no café."
+    }
+  },
+  "skills": {
+    "section": "Habilidades",
+    "title": "Desenvolvimento Frontend, Backend e Full-stack",
+    "subtitle": "Tenho foco em criar soluções escaláveis e de fácil manutenção que cresçam junto com as necessidades do seu negócio."
+  },
+  "projects": {
+    "section": "Projetos",
+    "title": "Portfólio inclui plataformas de e-commerce, aplicações SaaS e integrações de APIs",
+    "subtitle": "Cada projeto demonstra minha capacidade de traduzir requisitos complexos em soluções elegantes e performáticas, com impacto real para o negócio."
+  },
+  "contact": {
+    "section": "Contato",
+    "title": "Pronto para colaborar? Vamos construir algo incrível juntos.",
+    "subtitle": "Estou em busca de oportunidades full-time e projetos freelance onde possa contribuir com minha expertise técnica e paixão por inovação. Seja uma startup querendo construir seu MVP ou uma empresa consolidada precisando escalar sua plataforma, estou pronto para ajudar a alcançar seus objetivos.",
+    "availability": "Disponível para posições full-time e projetos freelance"
+  }
+}

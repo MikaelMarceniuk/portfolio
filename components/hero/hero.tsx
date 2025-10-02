@@ -1,34 +1,36 @@
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { HeroButton } from './hero-button'
 import { HeroLink } from './hero-link'
+import { useTranslations } from 'next-intl'
 
 export function Hero() {
+  const t = useTranslations()
+
   return (
     <section className="min-h-screen flex items-center justify-center px-6 lg:px-12">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl lg:text-7xl font-bold text-balance">
-              Mikael Marceniuk
+              {t('hero.name')}
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground font-medium">
-              Full-Stack Developer
+              {t('hero.title')}
             </p>
             <p className="text-lg text-muted-foreground max-w-md">
-              I build scalable web solutions with Node.js, React, and
-              TypeScript.
+              {t('hero.subtitle')}
             </p>
           </div>
 
           <div className="flex gap-4">
             <HeroButton
               icon={<Mail className="w-4 h-4 mr-2" />}
-              text="Get In Touch"
+              text={t('hero.cta.contact')}
               hrefTo={'email'}
             />
             <HeroButton
               icon={<Github className="w-4 h-4 mr-2" />}
-              text="GitHub"
+              text={t('hero.cta.github')}
               hrefTo={'github'}
               variant={'outline'}
             />
@@ -57,7 +59,7 @@ export function Hero() {
                 <span className="text-2xl font-bold">MM</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                {'// Coffee enthusiast & code craftsman'}
+                {t('hero.social.coffee')}
               </p>
             </div>
           </div>

@@ -1,4 +1,8 @@
+import { useTranslations } from 'next-intl'
+
 export function About() {
+  const t = useTranslations()
+
   return (
     <section
       id="about"
@@ -10,42 +14,20 @@ export function About() {
             <div className="space-y-2">
               <div className="w-16 h-px bg-primary"></div>
               <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                About
+                {t('about.section')}
               </h2>
             </div>
 
             <h3 className="text-3xl lg:text-4xl font-bold text-balance">
-              Specialized in modern JavaScript ecosystems
+              {t('about.title')}
             </h3>
           </div>
 
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-            <p>
-              I specialize in building end-to-end web applications using
-              cutting-edge technologies like React, Next.js, NestJS, and
-              TypeScript. My approach combines clean, maintainable code with
-              performance optimization, resulting in applications that scale
-              efficiently and deliver exceptional user experiences.
-            </p>
-
-            <p>
-              I've helped startups reduce deployment time by 60% and enterprises
-              improve application performance by 40% through strategic
-              architecture decisions and modern development practices.
-            </p>
-
-            <p>
-              Currently, I'm a Senior Full-Stack Developer specializing in
-              accessibility and performance optimization. I contribute to the
-              creation and maintenance of scalable applications that meet modern
-              web standards and best practices to deliver inclusive user
-              experiences.
-            </p>
-
-            <p>
-              When I'm not coding, you'll find me exploring new coffee brewing
-              techniques – precision matters in both code and coffee.
-            </p>
+            <p>{t('about.paragraphs.first')}</p>
+            <p>{t('about.paragraphs.second')}</p>
+            <p>{t('about.paragraphs.third')}</p>
+            <p>{t('about.paragraphs.fourth')}</p>
           </div>
         </div>
       </div>

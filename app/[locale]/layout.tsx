@@ -4,7 +4,8 @@ import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/next'
 import { Suspense } from 'react'
-import './globals.css'
+import { NextIntlClientProvider } from 'next-intl'
+import '../globals.css'
 
 export const metadata: Metadata = {
   title: 'Mikael Marceniuk - Full-Stack Developer',
@@ -26,8 +27,10 @@ export default function RootLayout({
       <body
         className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
-        <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
+        <NextIntlClientProvider>
+          <Suspense fallback={null}>{children}</Suspense>
+          <Analytics />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

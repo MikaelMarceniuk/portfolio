@@ -1,17 +1,10 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { ExternalLink, Github } from 'lucide-react'
 import { projects } from '@/constants/projects.contants'
 import { ProjectCard } from './project-card'
+import { useTranslations } from 'next-intl'
 
 export function Projects() {
+  const t = useTranslations()
+
   return (
     <section
       id="projects"
@@ -23,19 +16,16 @@ export function Projects() {
             <div className="space-y-2">
               <div className="w-16 h-px bg-primary"></div>
               <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                Projects
+                {t('projects.section')}
               </h2>
             </div>
 
             <h3 className="text-3xl lg:text-4xl font-bold text-balance">
-              Portfolio includes e-commerce platforms, SaaS applications, and
-              API integrations
+              {t('projects.title')}
             </h3>
 
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Each project showcases my ability to translate complex
-              requirements into elegant, performant solutions with measurable
-              business impact.
+              {t('projects.subtitle')}
             </p>
           </div>
 
