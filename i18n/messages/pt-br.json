@@ -36,5 +36,11 @@
     "title": "Pronto para colaborar? Vamos construir algo incrível juntos.",
     "subtitle": "Estou em busca de oportunidades full-time e projetos freelance onde possa contribuir com minha expertise técnica e paixão por inovação. Seja uma startup querendo construir seu MVP ou uma empresa consolidada precisando escalar sua plataforma, estou pronto para ajudar a alcançar seus objetivos.",
     "availability": "Disponível para posições full-time e projetos freelance"
+  },
+  "components": {
+    "language-dropdown": {
+      "title": "Idioma do site",
+      "label": "Escolha um idioma"
+    }
   }
 }

@@ -1,15 +1,7 @@
-'use client'
+import { navItems } from '@/constants/nav-items.contants'
+import { useEffect, useState } from 'react'
 
-import { useState, useEffect } from 'react'
-
-const navItems = [
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
-]
-
-export function Navigation() {
+export const useNavigation = () => {
   const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
@@ -43,23 +35,8 @@ export function Navigation() {
     }
   }
 
-  return (
-    <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
-      <div className="flex flex-col gap-6">
-        {navItems.map((item) => (
-          <button
-            key={item.name}
-            onClick={() => scrollToSection(item.href)}
-            className={`text-left text-sm font-medium transition-colors hover:text-primary ${
-              activeSection === item.href.slice(1)
-                ? 'text-primary border-l-2 border-primary pl-4'
-                : 'text-muted-foreground pl-4'
-            }`}
-          >
-            {item.name.toUpperCase()}
-          </button>
-        ))}
-      </div>
-    </nav>
-  )
+  return {
+    activeSection,
+    scrollToSection,
+  }
 }

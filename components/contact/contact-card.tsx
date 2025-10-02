@@ -11,6 +11,7 @@ interface IContactCard {
   hrefTo: LinkKey
 }
 
+// TODO Fix overflow
 export const ContactCard: React.FC<IContactCard> = ({
   icon,
   title,
