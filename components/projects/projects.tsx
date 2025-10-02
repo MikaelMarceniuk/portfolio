@@ -31,7 +31,10 @@ export function Projects() {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {projects.map((p) => (
-              <ProjectCard {...p} />
+              <ProjectCard
+                {...p}
+                key={p.name}
+              />
             ))}
           </div>
         </div>

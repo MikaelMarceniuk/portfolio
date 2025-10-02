@@ -2,6 +2,7 @@ import { LanguageDropdown } from './language-dropdown'
 import { navItems } from '@/constants/nav-items.contants'
 import { NavButton } from './nav-button'
 
+// TODO Improve this on mobile
 export function Navigation() {
   return (
     <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
