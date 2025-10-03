@@ -1,6 +1,6 @@
 import { Hero } from '@/components/hero/hero'
 import { About } from '@/components/about'
-import { Skills } from '@/components/skills'
+import { Skills } from '@/components/skills/skills'
 import { Projects } from '@/components/projects/projects'
 import { Contact } from '@/components/contact/contact'
 import { Navigation } from '@/components/navigation/navigation'
