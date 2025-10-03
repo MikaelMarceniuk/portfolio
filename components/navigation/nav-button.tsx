@@ -2,6 +2,7 @@
 
 import { useNavigation } from '@/hooks/use-navigation'
 import { NavItem } from '@/types/nav-item.types'
+import { useTranslations } from 'next-intl'
 import React from 'react'
 
 interface INavButtonProps {
@@ -9,6 +10,7 @@ interface INavButtonProps {
 }
 
 export const NavButton: React.FC<INavButtonProps> = ({ item }) => {
+  const t = useTranslations()
   const { activeSection, scrollToSection } = useNavigation()
 
   return (
@@ -20,7 +22,7 @@ export const NavButton: React.FC<INavButtonProps> = ({ item }) => {
           : 'text-muted-foreground pl-4'
       }`}
     >
-      {item.name.toUpperCase()}
+      {t('constants.nav-items.' + item.code).toUpperCase()}
     </button>
   )
 }

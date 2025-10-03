@@ -1,4 +1,4 @@
 export type NavItem = {
-  name: string
+  code: string
   href: string
 }

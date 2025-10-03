@@ -10,8 +10,8 @@ export const DesktopNavigation = () => {
       <div className="flex flex-col gap-6">
         {navItems.map((item) => (
           <NavButton
+            key={item.code}
             item={item}
-            key={item.name}
           />
         ))}
         <LanguageDropdown />

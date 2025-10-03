@@ -21,7 +21,7 @@ export const MobileNavigation = () => {
         <div className="flex flex-col gap-6">
           {navItems.map((item) => (
             <NavButton
-              key={item.name}
+              key={item.code}
               item={item}
             />
           ))}
