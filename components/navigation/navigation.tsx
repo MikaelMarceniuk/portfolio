@@ -1,20 +1,11 @@
-import { LanguageDropdown } from './language-dropdown'
-import { navItems } from '@/constants/nav-items.contants'
-import { NavButton } from './nav-button'
+'use client'
 
-// TODO Improve this on mobile
+import { useIsMobile } from '../ui/use-mobile'
+import { MobileNavigation } from './mobile-navigation'
+import { DesktopNavigation } from './desktop-navigation'
+
 export function Navigation() {
-  return (
-    <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
-      <div className="flex flex-col gap-6">
-        {navItems.map((item) => (
-          <NavButton
-            item={item}
-            key={item.name}
-          />
-        ))}
-        <LanguageDropdown />
-      </div>
-    </nav>
-  )
+  const isMobile = useIsMobile()
+
+  return isMobile ? <MobileNavigation /> : <DesktopNavigation />
 }

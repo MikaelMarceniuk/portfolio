@@ -11,7 +11,6 @@ interface IContactCard {
   hrefTo: LinkKey
 }
 
-// TODO Fix overflow
 export const ContactCard: React.FC<IContactCard> = ({
   icon,
   title,
@@ -29,7 +28,9 @@ export const ContactCard: React.FC<IContactCard> = ({
         </div>
         <div>
           <h4 className="font-semibold mb-2">{title}</h4>
-          <p className="text-sm text-muted-foreground">{subtitle}</p>
+          <p className="text-sm text-muted-foreground truncate max-w-[200px] mx-auto">
+            {subtitle}
+          </p>
         </div>
       </CardContent>
     </Card>

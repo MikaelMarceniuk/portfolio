@@ -20,7 +20,7 @@ export const LanguageDropdown = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button
-          className={`text-left text-sm font-medium transition-colors hover:text-primary pl-4 text-muted-foreground`}
+          className={`text-left text-sm font-medium transition-colors hover:text-primary pl-4 text-muted-foreground cursor-pointer`}
         >
           {t('components.language-dropdown.title').toUpperCase()}
         </button>
@@ -34,6 +34,7 @@ export const LanguageDropdown = () => {
           <DropdownMenuItem
             key={l.code}
             onClick={() => handleChangeLocale(l.code)}
+            className="cursor-pointer"
           >
             {l.flag}
             <p className="pl-0.5">{l.label}</p>
