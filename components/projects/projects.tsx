@@ -1,6 +1,5 @@
-import { projects } from '@/constants/projects.contants'
-import { ProjectCard } from './project-card'
 import { useTranslations } from 'next-intl'
+import { ProjectList } from './projects-list'
 
 export function Projects() {
   const t = useTranslations()
@@ -29,14 +28,7 @@ export function Projects() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {projects.map((p) => (
-              <ProjectCard
-                {...p}
-                key={p.name}
-              />
-            ))}
-          </div>
+          <ProjectList />
         </div>
       </div>
     </section>

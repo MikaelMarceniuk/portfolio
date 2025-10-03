@@ -4,8 +4,10 @@ import { availableLocales } from '@/constants/locales.contants'
 import { useLocale as usei18n } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 
+type LocaleCode = 'en' | 'pt-br'
+
 export const useLocale = () => {
-  const locale = usei18n()
+  const locale = usei18n() as LocaleCode
   const pathname = usePathname()
   const router = useRouter()
 
