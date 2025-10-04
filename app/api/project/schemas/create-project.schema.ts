@@ -15,8 +15,6 @@ export const createProjectSchema = z.object({
 
   stack: z.array(z.string()).min(2, 'At least two stack items are required'),
 
-  image: z.string().min(1, 'Image is required'),
-
   githubLink: z
     .string()
     .url('Invalid GitHub URL')

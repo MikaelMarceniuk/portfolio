@@ -1,5 +1,5 @@
 import clientPromise from '@/lib/mongo.db'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { createProjectSchema } from './schemas/create-project.schema'
 import { authenticateRequest } from '../_utils/authenticated-request.utils'
 
@@ -19,46 +19,26 @@ export async function GET() {
 }
 
 // POST → cria um novo projeto
-export async function POST(request: Request) {
-  const authError = authenticateRequest(request)
+export async function POST(req: NextRequest) {
+  const authError = authenticateRequest(req)
   if (authError) return authError
 
   try {
-    const formData = await request.formData()
-
-    const projectRaw = {
-      name: formData.get('name')?.toString(),
-      description: {
-        en: formData.get('descriptionEn')?.toString(),
-        'pt-br': formData.get('descriptionPt')?.toString(),
-      },
-      impact: {
-        en: formData.get('impactEn')?.toString(),
-        'pt-br': formData.get('impactPt')?.toString(),
-      },
-      stack: formData.getAll('stack').map(String),
-      image: formData.get('image')?.toString(),
-      githubLink: formData.get('githubLink')?.toString(),
-      liveLink: formData.get('liveLink')?.toString(),
-    }
+    const data = await req.json()
 
     // Validação
-    const parseResult = createProjectSchema.safeParse(projectRaw)
-
-    if (!parseResult.success) {
-      return NextResponse.json(
-        {
-          error: 'Validation failed',
-          details: parseResult.error.errors.map((err) => ({
-            field: err.path.join('.'),
-            message: err.message,
-          })),
-        },
-        { status: 400 }
-      )
+    const parsed = createProjectSchema.safeParse(data)
+    if (!parsed.success) {
+      return NextResponse.json({
+        error: 'Validation failed',
+        details: parsed.error.errors.map((err) => ({
+          field: err.path.join('.'),
+          message: err.message,
+        })),
+      })
     }
 
-    const project = parseResult.data
+    const project = parsed.data
 
     // Persistência no Mongo
     const client = await clientPromise
