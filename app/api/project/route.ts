@@ -1,5 +1,6 @@
 import clientPromise from '@/lib/mongo.db'
 import { NextResponse } from 'next/server'
+import { createProjectSchema } from './schemas/create-project.schema'
 
 // GET → lista todos os projetos
 export async function GET() {
@@ -16,41 +17,51 @@ export async function GET() {
   }
 }
 
-// TODO Protect this route
 // POST → cria um novo projeto
 export async function POST(request: Request) {
   try {
     const formData = await request.formData()
 
-    // TODO Validar com zod
-    const name = formData.get('name')?.toString()
-    const descriptionEn = formData.get('descriptionEn')?.toString()
-    const descriptionPt = formData.get('descriptionPt')?.toString()
-    const impactEn = formData.get('impactEn')?.toString()
-    const impactPt = formData.get('impactPt')?.toString()
-    const stack = formData.getAll('stack') as string[]
-    const image = formData.get('image')?.toString() || '' // placeholder
-    const githubLink = formData.get('githubLink')?.toString() || ''
-    const liveLink = formData.get('liveLink')?.toString() || ''
+    const projectRaw = {
+      name: formData.get('name')?.toString(),
+      description: {
+        en: formData.get('descriptionEn')?.toString(),
+        'pt-br': formData.get('descriptionPt')?.toString(),
+      },
+      impact: {
+        en: formData.get('impactEn')?.toString(),
+        'pt-br': formData.get('impactPt')?.toString(),
+      },
+      stack: formData.getAll('stack').map(String),
+      image: formData.get('image')?.toString(),
+      githubLink: formData.get('githubLink')?.toString(),
+      liveLink: formData.get('liveLink')?.toString(),
+    }
 
-    if (!name || !descriptionEn || !descriptionPt) {
+    // Validação
+    const parseResult = createProjectSchema.safeParse(projectRaw)
+
+    if (!parseResult.success) {
       return NextResponse.json(
-        { error: 'Name and descriptions are required' },
+        {
+          error: 'Validation failed',
+          details: parseResult.error.errors.map((err) => ({
+            field: err.path.join('.'),
+            message: err.message,
+          })),
+        },
         { status: 400 }
       )
     }
 
+    const project = parseResult.data
+
+    // Persistência no Mongo
     const client = await clientPromise
     const db = client.db('portfolio')
 
     const result = await db.collection('projects').insertOne({
-      name,
-      description: { en: descriptionEn, 'pt-br': descriptionPt },
-      impact: { en: impactEn || '', 'pt-br': impactPt || '' },
-      stack,
-      image,
-      githubLink,
-      liveLink,
+      ...project,
       createdAt: new Date(),
     })
 
