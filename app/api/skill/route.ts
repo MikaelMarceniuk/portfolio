@@ -2,6 +2,7 @@ import clientPromise from '@/lib/mongo.db'
 import { Skill } from '@/types/skills.type'
 import { NextRequest, NextResponse } from 'next/server'
 import { createSkillsSchema } from './schemas/create-skill.schema'
+import { authenticateRequest } from '../_utils/authenticated-request.utils'
 
 // GET: retorna todas as skills
 export async function GET() {
@@ -21,6 +22,9 @@ export async function GET() {
 
 // POST: cria nova skill
 export async function POST(req: NextRequest) {
+  const authError = authenticateRequest(req)
+  if (authError) return authError
+
   try {
     const data = await req.json()
 

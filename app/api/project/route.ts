@@ -1,6 +1,7 @@
 import clientPromise from '@/lib/mongo.db'
 import { NextResponse } from 'next/server'
 import { createProjectSchema } from './schemas/create-project.schema'
+import { authenticateRequest } from '../_utils/authenticated-request.utils'
 
 // GET → lista todos os projetos
 export async function GET() {
@@ -19,6 +20,9 @@ export async function GET() {
 
 // POST → cria um novo projeto
 export async function POST(request: Request) {
+  const authError = authenticateRequest(request)
+  if (authError) return authError
+
   try {
     const formData = await request.formData()
 
