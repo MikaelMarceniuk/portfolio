@@ -2,6 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import { del, put } from '@vercel/blob'
 import { BLOB_FOLDERS } from '@/constants/blob-folders.contants'
+import sharp from 'sharp'
+import { randomUUID } from 'crypto'
 
 function slugifyFilename(name: string) {
   return name
@@ -26,8 +28,12 @@ type WriteFileResponse = {
 export async function writeFile({
   image,
 }: WriteFileParams): Promise<WriteFileResponse> {
+  const thumbnail = await createThumbnail(image)
+
   let filepath: string
-  const filename = slugifyFilename(image.name)
+  const filename = `${Date.now()}-${randomUUID().slice(0, 8)}-${slugifyFilename(
+    image.name
+  )}.webp`
 
   if (process.env.NODE_ENV === 'development') {
     // Cria pasta public/uploads se não existir
@@ -44,7 +50,7 @@ export async function writeFile({
     )
 
     // Salva o arquivo
-    const buffer = Buffer.from(await image.arrayBuffer())
+    const buffer = Buffer.from(thumbnail)
     fs.writeFileSync(filepathToWrite, buffer)
 
     filepath = `/uploads/${filename}`
@@ -53,7 +59,7 @@ export async function writeFile({
   if (process.env.NODE_ENV === 'production') {
     filepath = `${BLOB_FOLDERS.projects}/`
 
-    const blob = await put(`${BLOB_FOLDERS.projects}/${filename}`, image, {
+    const blob = await put(`${BLOB_FOLDERS.projects}/${filename}`, thumbnail, {
       access: 'public',
     })
 
@@ -100,4 +106,15 @@ export function getOldFilepath(imagePath: string): string | null {
   }
 
   return null
+}
+
+export async function createThumbnail(file: File) {
+  const buffer = Buffer.from(await file.arrayBuffer())
+
+  // Gera apenas uma versão comprimida, mantendo resolução original
+  const thumbnailBuffer = await sharp(buffer)
+    .webp({ quality: 80 }) // compressão para web, mantendo qualidade boa
+    .toBuffer()
+
+  return thumbnailBuffer
 }
