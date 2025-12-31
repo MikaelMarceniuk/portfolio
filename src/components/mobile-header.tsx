@@ -9,7 +9,7 @@ import {
 import { Menu01Icon } from '@hugeicons/core-free-icons'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { Button } from './ui/button'
-import { socialLinks } from '../constants/social-links.contants'
+import { socialLinks } from '../constants/social-links.constants'
 import { headerItens } from '../constants/header-itens.constants'
 
 export const MobileHeader = () => {

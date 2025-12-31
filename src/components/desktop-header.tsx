@@ -1,5 +1,5 @@
 import { headerItens } from '@/src/constants/header-itens.constants'
-import { socialLinks } from '@/src/constants/social-links.contants'
+import { socialLinks } from '@/src/constants/social-links.constants'
 import { Button } from './ui/button'
 import { HugeiconsIcon } from '@hugeicons/react'
 
