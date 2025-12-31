@@ -1,19 +1,14 @@
 {
-  "name": "Mikael Portfolio",
-
-  // Usa docker-compose ao invés de só uma imagem
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspace",
-
+  "name": "Bun",
+  "dockerFile": "Dockerfile",
   "customizations": {
     "vscode": {
       "extensions": [
+        "oven.bun-vscode",
         "formulahendry.auto-tag-close",
         "formulahendry.auto-rename-tag",
         "csstools.postcss",
         "bradlc.vscode-tailwindcss",
-        "prisma.prisma",
         "vivaxy.vscode-conventional-commits",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
@@ -22,13 +17,5 @@
         "pkief.material-icon-theme"
       ]
     }
-  },
-
-  // Abre o Next.js na porta 3000 e Mongo na 27017
-  "forwardPorts": [3000, 27017],
-
-  // Rodar depois de criar
-  "postCreateCommand": "yarn install",
-
-  "remoteUser": "node"
+  }
 }
