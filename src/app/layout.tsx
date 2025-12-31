@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import { withChildren } from '@/types/with-children.type'
 
 import './globals.css'
+import { ThemeProvider } from 'next-themes'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -16,10 +17,20 @@ export const metadata: Metadata = {
 const RootLayout: React.FC<withChildren> = ({ children }) => {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={inter.variable}
+      suppressHydrationWarning
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
