@@ -1,7 +1,11 @@
-import { ComponentExample } from '@/src/components/component-example'
+import { MobileHeader } from '../components/mobile-header'
 
 const HomePage = () => {
-  return <ComponentExample />
+  return (
+    <main className="px-6">
+      <MobileHeader />
+    </main>
+  )
 }
 
 export default HomePage
