@@ -1,23 +1,23 @@
 import { Navbar } from '@/components/sections/navbar'
-import { Hero } from '@/components/sections/hero'
+import { HeroSection } from '@/components/sections/hero.section'
 import { SkillsTicker } from '@/components/sections/skills-ticker'
-import { About } from '@/components/sections/about'
-import { Projects } from '@/components/sections/projects'
-import { Experience } from '@/components/sections/experience'
-import { TechnicalArsenal } from '@/components/sections/technical-arsenal'
-import { Contact } from '@/components/sections/contact'
+import { AboutSection } from '@/components/sections/about.section'
+import { ProjectsSection } from '@/components/sections/projects.section'
+import { ExperienceSection } from '@/components/sections/experience.section'
+import { TechnicalArsenalSection } from '@/components/sections/technical-arsenal.section'
+import { ContactSection } from '@/components/sections/contact.section'
 
 export default function Page() {
   return (
     <main>
       <Navbar />
-      <Hero />
+      <HeroSection />
       <SkillsTicker />
-      <About />
-      <Projects />
-      <Experience />
-      <TechnicalArsenal />
-      <Contact />
+      <AboutSection />
+      <ProjectsSection />
+      <ExperienceSection />
+      <TechnicalArsenalSection />
+      <ContactSection />
     </main>
   )
 }

@@ -1,6 +1,16 @@
 const skills = [
-  'REACT', 'NEXT.JS', 'TYPESCRIPT', 'NODE.JS', 'POSTGRESQL',
-  'AWS', 'DOCKER', 'GRAPHQL', 'PRISMA', 'TAILWIND CSS', 'REDIS', 'CI/CD',
+  'REACT',
+  'NEXT.JS',
+  'TYPESCRIPT',
+  'NODE.JS',
+  'POSTGRESQL',
+  'AWS',
+  'DOCKER',
+  'GRAPHQL',
+  'PRISMA',
+  'TAILWIND CSS',
+  'REDIS',
+  'CI/CD',
 ]
 
 export function SkillsTicker() {
@@ -19,7 +29,15 @@ export function SkillsTicker() {
     >
       <div className="ticker-track">
         {doubled.map((skill, i) => (
-          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '0 1.5rem' }}>
+          <div
+            key={i}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1.5rem',
+              padding: '0 1.5rem',
+            }}
+          >
             <span
               style={{
                 fontFamily: 'var(--font-mono)',
@@ -33,7 +51,12 @@ export function SkillsTicker() {
             >
               {skill}
             </span>
-            <span aria-hidden="true" style={{ color: 'var(--accent)', fontSize: '0.4rem' }}>&#9679;</span>
+            <span
+              aria-hidden="true"
+              style={{ color: 'var(--accent)', fontSize: '0.4rem' }}
+            >
+              &#9679;
+            </span>
           </div>
         ))}
       </div>

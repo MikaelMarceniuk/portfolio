@@ -2,7 +2,7 @@
 
 import { ArrowRight, Download } from 'lucide-react'
 
-export function Hero() {
+export const HeroSection = () => {
   return (
     <section
       id="hero"
@@ -29,7 +29,14 @@ export function Hero() {
         }}
       />
 
-      <div style={{ position: 'relative', maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
+      <div
+        style={{
+          position: 'relative',
+          maxWidth: '1200px',
+          width: '100%',
+          margin: '0 auto',
+        }}
+      >
         {/* Label */}
         <p
           style={{
@@ -80,7 +87,15 @@ export function Hero() {
         </p>
 
         {/* CTAs */}
-        <div style={{ marginTop: '2.5rem', display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
+        <div
+          style={{
+            marginTop: '2.5rem',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '1rem',
+            alignItems: 'center',
+          }}
+        >
           <a
             href="#projects"
             style={{
@@ -98,8 +113,12 @@ export function Hero() {
               textDecoration: 'none',
               transition: 'background 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--accent-hover)')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--accent)')}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = 'var(--accent-hover)')
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = 'var(--accent)')
+            }
           >
             View Projects
             <ArrowRight size={14} />
@@ -137,7 +156,14 @@ export function Hero() {
         </div>
 
         {/* Stats */}
-        <div style={{ marginTop: '4rem', display: 'flex', flexWrap: 'wrap', gap: '3rem' }}>
+        <div
+          style={{
+            marginTop: '4rem',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '3rem',
+          }}
+        >
           {[
             { value: '5+', label: 'Years Building' },
             { value: '30+', label: 'Projects Shipped' },

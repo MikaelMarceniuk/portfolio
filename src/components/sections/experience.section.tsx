@@ -23,14 +23,14 @@ const jobs = [
   },
 ]
 
-export function Experience() {
+export const ExperienceSection = () => {
   return (
     <section id="experience" className="px-6 py-24">
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-300">
         {/* Header */}
         <div className="mb-16">
           <p
-            className="font-mono text-xs uppercase tracking-widest mb-3"
+            className="mb-3 font-mono text-xs tracking-widest uppercase"
             style={{ color: 'var(--color-accent)', letterSpacing: '0.15em' }}
           >
             Professional Timeline
@@ -51,17 +51,17 @@ export function Experience() {
         <div className="relative">
           {/* Vertical line */}
           <div
-            className="absolute left-[7px] top-0 bottom-0 w-px hidden md:block"
+            className="absolute top-0 bottom-0 left-1.75 hidden w-px md:block"
             style={{ background: 'var(--color-surface-border)' }}
             aria-hidden="true"
           />
 
           <div className="space-y-12">
             {jobs.map((job, i) => (
-              <div key={i} className="md:pl-10 relative">
+              <div key={i} className="relative md:pl-10">
                 {/* Dot */}
                 <div
-                  className="absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full border-2 hidden md:block"
+                  className="absolute top-1.5 left-0 hidden h-3.5 w-3.5 rounded-full border-2 md:block"
                   style={{
                     background: 'var(--color-accent)',
                     borderColor: 'var(--color-background)',
@@ -74,19 +74,22 @@ export function Experience() {
                   {/* Meta */}
                   <div>
                     <p
-                      className="font-mono text-xs uppercase tracking-widest mb-2"
-                      style={{ color: 'var(--color-foreground-muted)', letterSpacing: '0.1em' }}
+                      className="mb-2 font-mono text-xs tracking-widest uppercase"
+                      style={{
+                        color: 'var(--color-foreground-muted)',
+                        letterSpacing: '0.1em',
+                      }}
                     >
                       {job.period}
                     </p>
                     <p
-                      className="font-heading font-semibold text-base"
+                      className="font-heading text-base font-semibold"
                       style={{ color: 'var(--color-foreground)' }}
                     >
                       {job.role}
                     </p>
                     <p
-                      className="font-mono text-xs mt-1"
+                      className="mt-1 font-mono text-xs"
                       style={{ color: 'var(--color-accent)' }}
                     >
                       {job.company}
@@ -95,15 +98,18 @@ export function Experience() {
 
                   {/* Content */}
                   <div
-                    className="rounded-xl border p-6 card-glow"
+                    className="card-glow rounded-xl border p-6"
                     style={{
                       borderColor: 'var(--color-surface-border)',
                       background: 'var(--color-surface)',
                     }}
                   >
                     <p
-                      className="text-sm leading-relaxed mb-4"
-                      style={{ color: 'var(--color-foreground-muted)', lineHeight: '1.7' }}
+                      className="mb-4 text-sm leading-relaxed"
+                      style={{
+                        color: 'var(--color-foreground-muted)',
+                        lineHeight: '1.7',
+                      }}
                     >
                       {job.description}
                     </p>
@@ -111,13 +117,16 @@ export function Experience() {
                       {job.bullets.map((b, j) => (
                         <li key={j} className="flex items-start gap-3">
                           <span
-                            className="mt-[5px] w-1 h-1 rounded-full flex-shrink-0"
+                            className="mt-1.25 h-1 w-1 shrink-0 rounded-full"
                             style={{ background: 'var(--color-accent)' }}
                             aria-hidden="true"
                           />
                           <span
                             className="text-sm"
-                            style={{ color: 'var(--color-foreground-muted)', lineHeight: '1.6' }}
+                            style={{
+                              color: 'var(--color-foreground-muted)',
+                              lineHeight: '1.6',
+                            }}
                           >
                             {b}
                           </span>

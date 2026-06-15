@@ -3,7 +3,13 @@ const categories = [
     icon: '◻',
     name: 'Frontend',
     color: 'var(--color-accent)',
-    skills: ['React / Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GraphQL Client'],
+    skills: [
+      'React / Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+      'GraphQL Client',
+    ],
   },
   {
     icon: '◼',
@@ -21,19 +27,28 @@ const categories = [
     icon: '◉',
     name: 'Cloud',
     color: '#a855f7',
-    skills: ['AWS (EC2, S3, RDS)', 'Vercel', 'Docker / K8s', 'Terraform', 'CI/CD'],
+    skills: [
+      'AWS (EC2, S3, RDS)',
+      'Vercel',
+      'Docker / K8s',
+      'Terraform',
+      'CI/CD',
+    ],
   },
 ]
 
-export function TechnicalArsenal() {
+export const TechnicalArsenalSection = () => {
   return (
     <section className="px-6 py-24">
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-300">
         {/* Header */}
         <div className="mb-12 text-center">
           <p
-            className="font-mono text-xs uppercase tracking-widest mb-3"
-            style={{ color: 'var(--color-foreground-muted)', letterSpacing: '0.15em' }}
+            className="mb-3 font-mono text-xs tracking-widest uppercase"
+            style={{
+              color: 'var(--color-foreground-muted)',
+              letterSpacing: '0.15em',
+            }}
           >
             Capabilities
           </p>
@@ -54,19 +69,22 @@ export function TechnicalArsenal() {
           {categories.map((cat) => (
             <div
               key={cat.name}
-              className="rounded-xl border p-6 card-glow"
+              className="card-glow rounded-xl border p-6"
               style={{
                 borderColor: 'var(--color-surface-border)',
                 background: 'var(--color-surface)',
               }}
             >
               {/* Category header */}
-              <div className="flex items-center gap-3 mb-5">
-                <span style={{ color: cat.color, fontSize: '1rem' }} aria-hidden="true">
+              <div className="mb-5 flex items-center gap-3">
+                <span
+                  style={{ color: cat.color, fontSize: '1rem' }}
+                  aria-hidden="true"
+                >
                   {cat.icon}
                 </span>
                 <p
-                  className="font-mono text-xs uppercase tracking-widest font-medium"
+                  className="font-mono text-xs font-medium tracking-widest uppercase"
                   style={{ color: cat.color, letterSpacing: '0.12em' }}
                 >
                   {cat.name}

@@ -19,11 +19,13 @@ export function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      className="fixed top-0 right-0 left-0 z-50 transition-all duration-300"
       style={{
         backgroundColor: scrolled ? 'rgba(10,13,20,0.88)' : 'transparent',
         backdropFilter: scrolled ? 'blur(20px)' : 'none',
-        borderBottom: scrolled ? '1px solid var(--border-subtle)' : '1px solid transparent',
+        borderBottom: scrolled
+          ? '1px solid var(--border-subtle)'
+          : '1px solid transparent',
       }}
     >
       <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
@@ -42,7 +44,7 @@ export function Navbar() {
           Mikael
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex list-none m-0 p-0">
+        <ul className="m-0 hidden list-none items-center gap-8 p-0 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -56,8 +58,12 @@ export function Navbar() {
                   textDecoration: 'none',
                   transition: 'color 0.2s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--fg)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--fg-muted)')}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = 'var(--fg)')
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = 'var(--fg-muted)')
+                }
               >
                 {link.label}
               </a>
@@ -80,8 +86,12 @@ export function Navbar() {
             textDecoration: 'none',
             transition: 'background 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--accent-hover)')}
-          onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--accent)')}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.background = 'var(--accent-hover)')
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.background = 'var(--accent)')
+          }
         >
           Hire Me
         </a>
