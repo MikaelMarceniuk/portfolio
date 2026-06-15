@@ -1,204 +1,53 @@
-'use client'
-
 import { ArrowRight, Download } from 'lucide-react'
+import { BaseSection } from '../base-section'
+import { SectionLabel } from '../section-label'
+import { GalaxyBackground } from '../galaxy-background'
+import { AnimatedText } from '../ui/animated-text'
 
 export const HeroSection = () => {
   return (
-    <section
-      id="hero"
-      style={{
-        position: 'relative',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '6rem 1.5rem 4rem',
-        backgroundColor: 'var(--bg)',
-      }}
+    <BaseSection
+      id="#hero"
+      className="relative flex min-h-dvh flex-col justify-center bg-background px-4 py-16 sm:px-6 sm:py-24"
     >
-      {/* Subtle dot-grid overlay */}
-      <div
-        aria-hidden="true"
-        style={{
-          pointerEvents: 'none',
-          position: 'absolute',
-          inset: 0,
-          backgroundImage:
-            'radial-gradient(rgba(61,139,253,0.06) 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-        }}
-      />
+      <GalaxyBackground />
 
-      <div
-        style={{
-          position: 'relative',
-          maxWidth: '1200px',
-          width: '100%',
-          margin: '0 auto',
-        }}
-      >
-        {/* Label */}
-        <p
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.65rem',
-            textTransform: 'uppercase',
-            letterSpacing: '0.2em',
-            color: 'var(--accent)',
-            marginBottom: '1.5rem',
-            marginTop: 0,
-          }}
-        >
-          Available for work
-        </p>
+      <div className="relative z-10 mx-auto w-full max-w-300">
+        <SectionLabel title="Available for work" />
 
         {/* Headline */}
-        <h1
-          style={{
-            fontFamily: 'var(--font-heading)',
-            fontWeight: 700,
-            fontSize: 'clamp(2.6rem, 7vw, 5.5rem)',
-            lineHeight: 1.08,
-            letterSpacing: '-0.04em',
-            margin: 0,
-            color: 'var(--fg)',
-          }}
-        >
-          Mikael —
+        <h1 className="m-0 font-heading text-[clamp(2.25rem,9vw,5.5rem)] leading-[1.08] tracking-[-0.04em] text-foreground">
+          Mikael Marceniuk
           <br />
-          <span style={{ color: 'var(--accent)' }}>Fullstack Developer</span>
+          <AnimatedText>Fullstack Developer</AnimatedText>
         </h1>
 
         {/* Description */}
-        <p
-          style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: '1rem',
-            lineHeight: 1.7,
-            color: 'var(--fg-muted)',
-            maxWidth: '32rem',
-            marginTop: '1.5rem',
-            marginBottom: 0,
-          }}
-        >
+        <p className="mt-4 mb-0 max-w-2xl font-sans text-base leading-[1.7] text-muted-foreground sm:mt-6 sm:text-lg">
           Specialized in React, Next.js &amp; modern backend systems.
           <br />
           Building scalable architecture with high-performance execution.
         </p>
 
         {/* CTAs */}
-        <div
-          style={{
-            marginTop: '2.5rem',
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '1rem',
-            alignItems: 'center',
-          }}
-        >
+        <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
           <a
             href="#projects"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.75rem',
-              fontWeight: 500,
-              letterSpacing: '0.06em',
-              padding: '0.75rem 1.5rem',
-              borderRadius: '0.375rem',
-              background: 'var(--accent)',
-              color: '#fff',
-              textDecoration: 'none',
-              transition: 'background 0.2s',
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.background = 'var(--accent-hover)')
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.background = 'var(--accent)')
-            }
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 font-mono text-[0.75rem] tracking-[0.06em] text-primary-foreground no-underline transition-colors duration-200 hover:bg-(--accent-hover) sm:w-auto sm:justify-start"
           >
             View Projects
             <ArrowRight size={14} />
           </a>
+
           <a
             href="/resume.pdf"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.75rem',
-              fontWeight: 500,
-              letterSpacing: '0.06em',
-              padding: '0.75rem 1.5rem',
-              borderRadius: '0.375rem',
-              background: 'transparent',
-              color: 'var(--fg)',
-              border: '1px solid var(--border-subtle)',
-              textDecoration: 'none',
-              transition: 'border-color 0.2s, background 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'var(--surface)'
-              e.currentTarget.style.borderColor = 'var(--fg-muted)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.borderColor = 'var(--border-subtle)'
-            }}
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-transparent px-6 py-3 text-[0.75rem] font-medium tracking-[0.06em] text-foreground no-underline transition-all duration-200 hover:border-muted-foreground hover:bg-muted sm:w-auto sm:justify-start"
           >
             Download Resume
             <Download size={14} />
           </a>
         </div>
-
-        {/* Stats */}
-        <div
-          style={{
-            marginTop: '4rem',
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '3rem',
-          }}
-        >
-          {[
-            { value: '5+', label: 'Years Building' },
-            { value: '30+', label: 'Projects Shipped' },
-            { value: '99%', label: 'Client Satisfaction' },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <p
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontWeight: 700,
-                  fontSize: '2.2rem',
-                  letterSpacing: '-0.03em',
-                  color: 'var(--fg)',
-                  margin: 0,
-                }}
-              >
-                {stat.value}
-              </p>
-              <p
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.6rem',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.12em',
-                  color: 'var(--fg-muted)',
-                  marginTop: '0.25rem',
-                  marginBottom: 0,
-                }}
-              >
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
-    </section>
+    </BaseSection>
   )
 }
