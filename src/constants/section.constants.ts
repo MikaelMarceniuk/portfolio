@@ -8,4 +8,5 @@ export const SECTIONS = {
   FEATURED_WORK: 'featured-work',
   PROFESSIONAL_EXPERIENCE: 'professional-experience',
   TECHNICAL_SKILLS: 'tecnical_skills',
+  CONTACT: 'contact',
 } as const

@@ -5,7 +5,7 @@ import { AboutSection } from '@/components/sections/about'
 import { FeaturedWorkSection } from '@/components/sections/featured-work'
 import { ProfessionalTimelineSection } from '@/components/sections/professional-timeline.section'
 import { TechnicalSkillsSection } from '@/components/sections/technical-skills'
-import { ContactSection } from '@/components/sections/contact.section'
+import { ContactSection } from '@/components/sections/contact'
 
 export default function Page() {
   return (
