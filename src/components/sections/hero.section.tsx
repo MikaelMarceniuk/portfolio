@@ -4,6 +4,9 @@ import { SectionLabel } from '../section-label'
 import { GalaxyBackground } from '../galaxy-background'
 import { AnimatedText } from '../ui/animated-text'
 import { SECTIONS } from '@/constants/section.constants'
+import { AnimatedButton } from '../ui/animated-button'
+import Link from 'next/link'
+import { Button } from '../ui/button'
 
 export const HeroSection = () => {
   return (
@@ -33,21 +36,17 @@ export const HeroSection = () => {
 
         {/* CTAs */}
         <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-          <a
-            href={`#${SECTIONS.ABOUT}`}
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 font-mono text-[0.75rem] tracking-[0.06em] text-primary-foreground no-underline transition-colors duration-200 hover:bg-(--accent-hover) sm:w-auto sm:justify-start"
-          >
-            Get to know me
-            <ArrowRight size={14} />
-          </a>
+          <AnimatedButton asChild>
+            <Link href={`#${SECTIONS.ABOUT}`}>Get to know me</Link>
+          </AnimatedButton>
 
-          <a
-            href="/resume.pdf"
+          <Link
+            href={`#${SECTIONS.CONTACT}`}
             className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-transparent px-6 py-3 text-[0.75rem] font-medium tracking-[0.06em] text-foreground no-underline transition-all duration-200 hover:border-muted-foreground hover:bg-muted sm:w-auto sm:justify-start"
           >
             Download Resume
             <Download size={14} />
-          </a>
+          </Link>
         </div>
       </div>
     </BaseSection>
