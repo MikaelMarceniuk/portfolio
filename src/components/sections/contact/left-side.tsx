@@ -3,8 +3,11 @@
 import { SectionLabel } from '@/components/section-label'
 import { SectionTitle } from '@/components/section-title'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 export const ContactLeftSide = () => {
+  const t = useTranslations('rootPage.contactSection')
+
   return (
     <div className="flex flex-col gap-12">
       <div>
@@ -14,7 +17,7 @@ export const ContactLeftSide = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <SectionLabel title="Contact" />
+          <SectionLabel title={t('label')} />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,7 +25,7 @@ export const ContactLeftSide = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.55, delay: 0.05 }}
         >
-          <SectionTitle title="Let's work together" />
+          <SectionTitle title={t('title')} />
         </motion.div>
       </div>
 
@@ -34,8 +37,7 @@ export const ContactLeftSide = () => {
         className="max-w-sm text-sm leading-relaxed"
         style={{ color: 'var(--fg-muted)', lineHeight: '1.75' }}
       >
-        Open to freelance projects and full-time opportunities, local or
-        international. I respond within 24 hours.
+        {t('description')}
       </motion.p>
     </div>
   )

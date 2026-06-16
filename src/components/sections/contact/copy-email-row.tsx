@@ -3,6 +3,7 @@
 import { Check, Copy, Mail } from 'lucide-react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 export const CopyEmailRow = ({
   icon: Icon,
@@ -13,6 +14,7 @@ export const CopyEmailRow = ({
   label: string
   value: string
 }) => {
+  const t = useTranslations('ui.copyEmailRow')
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {
@@ -40,7 +42,9 @@ export const CopyEmailRow = ({
         style={{ color: copied ? 'var(--accent)' : 'var(--fg-muted)' }}
       >
         {copied ? <Check size={13} /> : <Copy size={13} />}
-        <span className="font-mono text-xs">{copied ? 'copied' : 'copy'}</span>
+        <span className="font-mono text-xs">
+          {copied ? t('copied') : t('copy')}
+        </span>
       </motion.div>
     </button>
   )

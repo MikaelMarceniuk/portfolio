@@ -28,6 +28,11 @@
     "professionalTimelineSection": {
       "label": "Professional Timeline",
       "title": "Professional Experience"
+    },
+    "contactSection": {
+      "label": "Contact",
+      "title": "Let's work together",
+      "description": "Open to freelance projects and full-time opportunities, local or international. I respond within 24 hours."
     }
   },
   "ui": {
@@ -43,6 +48,10 @@
         "pt1": "Show ",
         "pt2": "  more"
       }
+    },
+    "copyEmailRow": {
+      "copy": "copy",
+      "copied": "copied"
     }
   },
   "data": {

@@ -28,6 +28,11 @@
     "professionalTimelineSection": {
       "label": "Linha do tempo profissional",
       "title": "Experiência profissional"
+    },
+    "contactSection": {
+      "label": "Contato",
+      "title": "Vamos trabalhar juntos",
+      "description": "Disponível para projetos freelance e oportunidades full-time, locais ou internacionais. Respondo em até 24 horas."
     }
   },
   "ui": {
@@ -43,6 +48,10 @@
         "pt1": "Mostrar mais ",
         "pt2": " experiências"
       }
+    },
+    "copyEmailRow": {
+      "copy": "copiar",
+      "copied": "copiado"
     }
   },
   "data": {
