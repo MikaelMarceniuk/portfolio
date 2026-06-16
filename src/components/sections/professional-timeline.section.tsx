@@ -1,3 +1,4 @@
+import { SECTIONS } from '@/constants/section.constants'
 import { BaseSection } from '../base-section'
 import { SectionLabel } from '../section-label'
 import { SectionTitle } from '../section-title'
@@ -30,7 +31,7 @@ const jobs = [
 
 export const ProfessionalTimelineSection = () => {
   return (
-    <BaseSection id="professional-experience" className="px-6 py-24">
+    <BaseSection id={SECTIONS.PROFESSIONAL_EXPERIENCE} className="px-6 py-24">
       <div className="mx-auto max-w-300">
         <div className="mb-16">
           <SectionLabel title="Professional Timeline" />

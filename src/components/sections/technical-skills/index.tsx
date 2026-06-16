@@ -5,6 +5,7 @@ import { SectionLabel } from '@/components/section-label'
 import { SectionTitle } from '@/components/section-title'
 import { SKILLS_CATEGORIES } from '@/mock/technical-skills'
 import { SkillCard } from './technical-skills.card'
+import { SECTIONS } from '@/constants/section.constants'
 
 type TechnicalSkillsSectionProps = {
   showProgress?: boolean
@@ -14,7 +15,7 @@ export const TechnicalSkillsSection: React.FC<TechnicalSkillsSectionProps> = ({
   showProgress = false,
 }) => {
   return (
-    <BaseSection id="tecnical_skills" className="px-6 py-24" isOdd>
+    <BaseSection id={SECTIONS.TECHNICAL_SKILLS} className="px-6 py-24" isOdd>
       <div className="mx-auto max-w-300">
         <div className="mb-12">
           <SectionLabel title="Capabilities" />
