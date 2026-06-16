@@ -36,7 +36,12 @@ export const AppNavbar = () => {
       { rootMargin: '-30% 0px -40% 0px' }
     )
 
-    const targets = ['hero', ...NAV_ITEMS.map((item) => item.id)]
+    const targets = [
+      'hero',
+      ...NAV_ITEMS.map((item) => item.id),
+      SECTIONS.CONTACT,
+    ]
+
     targets.forEach((id) => {
       const el = document.getElementById(id)
       if (el) observer.observe(el)
