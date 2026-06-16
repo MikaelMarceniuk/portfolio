@@ -12,6 +12,14 @@
       },
       "cta1": "Get to know me",
       "cta2": "Download resume"
+    },
+    "aboutSection": {
+      "label": "About me",
+      "title": "Crafting digital experiences with precision.",
+      "description": {
+        "pt1": "I am a software engineer focused on building robust fullstack applications. My journey involves deep-diving into complex architectural problems and delivering clean, maintainable code that drives business value.",
+        "pt2": "Beyond coding, I focus on system performance, developer experience, and creating seamless user interfaces that feel intuitive and powerful."
+      }
     }
   },
   "ui": {

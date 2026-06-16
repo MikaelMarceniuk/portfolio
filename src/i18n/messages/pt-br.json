@@ -12,6 +12,14 @@
       },
       "cta1": "Saiba mais sobre mim",
       "cta2": "Baixar currículo"
+    },
+    "aboutSection": {
+      "label": "Sobre mim",
+      "title": "Criando experiências digitais com precisão.",
+      "description": {
+        "pt1": "Sou engenheiro de software focado na construção de aplicações fullstack robustas. Minha trajetória envolve mergulhar em problemas arquiteturais complexos e entregar código limpo e de fácil manutenção que gera valor real para o negócio.",
+        "pt2": "Além de codificar, foco em performance de sistemas, experiência do desenvolvedor e na criação de interfaces fluidas que parecem intuitivas e poderosas."
+      }
     }
   },
   "ui": {

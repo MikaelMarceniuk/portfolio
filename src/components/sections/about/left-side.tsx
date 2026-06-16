@@ -1,26 +1,22 @@
+'use client'
+
 import { SectionLabel } from '@/components/section-label'
 import { SectionTitle } from '@/components/section-title'
+import { useTranslations } from 'next-intl'
 
 // TODO Improve text
 export const LeftSide = () => {
+  const t = useTranslations('rootPage.aboutSection')
+
   return (
     <div>
-      <SectionLabel title="About me" />
-      <SectionTitle title="Crafting digital experiences with precision." />
+      <SectionLabel title={t('label')} />
+      <SectionTitle title={t('title')} />
 
       <div className="space-y-4 pt-4">
-        <p className="text-muted-foreground">
-          I am a software engineer focused on building robust fullstack
-          applications. My journey involves deep-diving into complex
-          architectural problems and delivering clean, maintainable code that
-          drives business value.
-        </p>
+        <p className="text-muted-foreground">{t('description.pt1')}</p>
 
-        <p className="text-muted-foreground">
-          Beyond coding, I focus on system performance, developer experience,
-          and creating seamless user interfaces that feel intuitive and
-          powerful.
-        </p>
+        <p className="text-muted-foreground">{t('description.pt2')}</p>
       </div>
     </div>
   )
