@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils'
 import { FeaturedWork } from '@/types/featured-work.type'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type FeaturedWorkCardProps = {
   work: FeaturedWork
@@ -54,9 +55,12 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
         {/* Botões de Ação */}
         <div className="mt-4 flex flex-wrap gap-3">
           {work.ctaPrimary && (
-            <button className="cursor-pointer rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:opacity-90">
-              {work.ctaPrimary}
-            </button>
+            <Link
+              href={work.ctaPrimary.hrefTo}
+              className="cursor-pointer rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:opacity-90"
+            >
+              {work.ctaPrimary.text}
+            </Link>
           )}
           {work.ctaSecondary && (
             <button className="cursor-pointer rounded-md border border-border bg-transparent px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-secondary">

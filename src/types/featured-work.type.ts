@@ -5,7 +5,10 @@ export type FeaturedWork = {
   title: string
   description: string
   tags: string[]
-  ctaPrimary: string
-  ctaSecondary: string
+  ctaPrimary: {
+    text: string
+    hrefTo: string
+  }
+  ctaSecondary?: string
   isFeatured: boolean
 }
