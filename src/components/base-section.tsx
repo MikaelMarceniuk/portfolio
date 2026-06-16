@@ -4,14 +4,14 @@ import { cn } from '@/lib/utils'
 type BaseSectionProps = {
   children: React.ReactNode
   className: string
-  isOdd: boolean
+  isOdd?: boolean
   id: SECTION_VALUES
 }
 
 export const BaseSection: React.FC<BaseSectionProps> = ({
   children,
   className,
-  isOdd = true,
+  isOdd = false,
   id,
 }) => {
   return (
