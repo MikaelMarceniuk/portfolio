@@ -1,5 +1,9 @@
+'use client'
+
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { FeaturedWork } from '@/types/featured-work.type'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -12,6 +16,8 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
   work,
   isEven,
 }) => {
+  const t = useTranslations('data.works')
+
   return (
     <div
       className={cn(
@@ -27,17 +33,17 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
         <div className="flex items-center gap-2 font-mono text-xs tracking-widest text-primary uppercase">
           <span>{work.order}</span>
           <span className="text-border-subtle">/</span>
-          <span>{work.title}</span>
+          <span>{work.category}</span>
         </div>
 
         {/* Título do Projeto */}
         <h3 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-          {work.title}
+          {t(`${work.id}.title`)}
         </h3>
 
         {/* Descrição */}
         <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-          {work.description}
+          {t(`${work.id}.description`)}
         </p>
 
         {/* Tech Stack Badges */}
@@ -55,11 +61,12 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
         {/* Botões de Ação */}
         <div className="mt-4 flex flex-wrap gap-3">
           {work.ctaPrimary && (
+            // TODO Improve this Link
             <Link
               href={work.ctaPrimary.hrefTo}
               className="cursor-pointer rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:opacity-90"
             >
-              {work.ctaPrimary.text}
+              {t(`${work.id}.ctaPrimary`)}
             </Link>
           )}
           {work.ctaSecondary && (
@@ -70,8 +77,6 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
         </div>
       </div>
 
-      {/* ── Coluna: Mockup do Navegador (Imagem) ── */}
-      {/* order-1 força a imagem para o topo no mobile. md:order-* assume o controle no desktop */}
       <div
         className={`order-1 flex w-full justify-center md:col-span-5 ${
           isEven

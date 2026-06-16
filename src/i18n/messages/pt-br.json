@@ -20,6 +20,10 @@
         "pt1": "Sou engenheiro de software focado na construção de aplicações fullstack robustas. Minha trajetória envolve mergulhar em problemas arquiteturais complexos e entregar código limpo e de fácil manutenção que gera valor real para o negócio.",
         "pt2": "Além de codificar, foco em performance de sistemas, experiência do desenvolvedor e na criação de interfaces fluidas que parecem intuitivas e poderosas."
       }
+    },
+    "featuredWorkSection": {
+      "label": "Projetos Independentes",
+      "title": "Projetos em Destaque"
     }
   },
   "ui": {
@@ -29,6 +33,20 @@
       "professional-experience": "Experiência profissional",
       "tecnical-skills": "Habilidades técnicas",
       "hire-me": "Trabalhe comigo"
+    }
+  },
+  "data": {
+    "works": {
+      "01": {
+        "title": "NexusCRM",
+        "description": "Interface de negociação de alta frequência para criptoativos com atualizações em tempo real via WebSockets e bibliotecas de gráficos personalizadas para investidores institucionais.",
+        "ctaPrimary": "Saber mais"
+      },
+      "02": {
+        "title": "Speaker Trainer for Business",
+        "description": "Motor de indexação de alto rendimento para redes compatíveis com EVM, capaz de processar blocos de forma concorrente com zero perda de dados.",
+        "ctaPrimary": "Saber mais"
+      }
     }
   }
 }

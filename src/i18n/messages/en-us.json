@@ -20,6 +20,10 @@
         "pt1": "I am a software engineer focused on building robust fullstack applications. My journey involves deep-diving into complex architectural problems and delivering clean, maintainable code that drives business value.",
         "pt2": "Beyond coding, I focus on system performance, developer experience, and creating seamless user interfaces that feel intuitive and powerful."
       }
+    },
+    "featuredWorkSection": {
+      "label": "Independent Projects",
+      "title": "Featured Work"
     }
   },
   "ui": {
@@ -29,6 +33,20 @@
       "professional-experience": "Professional experience",
       "tecnical-skills": "Technical skills",
       "hire-me": "Hire me"
+    }
+  },
+  "data": {
+    "works": {
+      "01": {
+        "title": "NexusCRM",
+        "description": "High-frequency trading interface for cryptocurrency assets with real-time WebSocket updates and custom charting libraries for institutional investors.",
+        "ctaPrimary": "Know more"
+      },
+      "02": {
+        "title": "Speaker Trainer for Business",
+        "description": "High-throughput indexing engine for EVM-compatible networks, capable of processing blocks concurrently with zero data loss.",
+        "ctaPrimary": "Know more"
+      }
     }
   }
 }

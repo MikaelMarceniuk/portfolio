@@ -16,6 +16,7 @@ export const WORK_DATA: FeaturedWork[] = [
       'Docker',
       'Websockets',
       'Integration',
+      'CI/CD',
     ],
     ctaPrimary: {
       text: 'Know more',
@@ -39,6 +40,7 @@ export const WORK_DATA: FeaturedWork[] = [
       'IA',
       'Integration',
       'Websockets',
+      'CI/CD',
     ],
     ctaPrimary: {
       text: 'Know more',
