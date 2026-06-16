@@ -8,6 +8,7 @@ import { NAV_ITEMS } from '@/constants/nav-itens.contants'
 import { AnimatedButton } from '../ui/animated-button'
 import { NeonLine } from './neon-line'
 import { AnimatedText } from '../ui/animated-text'
+import { LocaleSwitcher } from '../locale-switcher'
 
 export const AppNavbar = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -83,9 +84,12 @@ export const AppNavbar = () => {
           })}
         </ul>
 
-        <AnimatedButton asChild>
-          <Link href={getHref(SECTIONS.CONTACT)}>Hire Me</Link>
-        </AnimatedButton>
+        <div className="flex items-center gap-4">
+          <LocaleSwitcher />
+          <AnimatedButton asChild>
+            <Link href={getHref(SECTIONS.CONTACT)}>Hire Me</Link>
+          </AnimatedButton>
+        </div>
       </nav>
     </header>
   )

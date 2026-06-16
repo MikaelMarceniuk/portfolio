@@ -5,6 +5,8 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 import { AppFooter } from '@/components/app-footer'
 import { AppNavbar } from '@/components/navbar'
+import { I18nProvider } from '@/components/i18n-provider'
+import { getLocale, getMessages } from 'next-intl/server'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -13,14 +15,17 @@ const fontMono = Geist_Mono({
   variable: '--font-mono',
 })
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type RootLayoutProps = {
   children: React.ReactNode
-}>) {
+}
+
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const locale = await getLocale()
+  const messages = await getMessages()
+
   return (
     <html
-      lang="en"
+      lang={locale}
       suppressHydrationWarning
       className={cn(
         'antialiased',
@@ -30,9 +35,11 @@ export default function RootLayout({
       )}
     >
       <body>
-        <AppNavbar />
-        <ThemeProvider>{children}</ThemeProvider>
-        <AppFooter />
+        <I18nProvider locale={locale} messages={messages}>
+          <AppNavbar />
+          <ThemeProvider>{children}</ThemeProvider>
+          <AppFooter />
+        </I18nProvider>
       </body>
     </html>
   )
