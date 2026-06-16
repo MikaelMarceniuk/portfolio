@@ -6,4 +6,5 @@ export const SECTIONS = {
   HERO: 'hero',
   ABOUT: 'about',
   FEATURED_WORK: 'featured-work',
+  PROFESSIONAL_EXPERIENCE: 'professional-experience',
 } as const

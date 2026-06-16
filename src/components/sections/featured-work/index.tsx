@@ -4,6 +4,7 @@ import { SectionLabel } from '../../section-label'
 import { SectionTitle } from '../../section-title'
 import { FeaturedWorkCard } from './featured-work.card'
 import { AnimatedButton } from '@/components/ui/animated-button'
+import Link from 'next/link'
 
 export const FeaturedWorkSection = () => {
   const featuredWorkData = WORK_DATA.filter((wk) => wk.isFeatured)
@@ -25,7 +26,9 @@ export const FeaturedWorkSection = () => {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <AnimatedButton text="View All Projects" hrefTo="/work" />
+          <AnimatedButton asChild>
+            <Link href="/work">View All Projects</Link>
+          </AnimatedButton>
         </div>
       </div>
     </BaseSection>
