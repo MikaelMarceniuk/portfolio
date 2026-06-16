@@ -24,6 +24,10 @@
     "featuredWorkSection": {
       "label": "Projetos Independentes",
       "title": "Projetos em Destaque"
+    },
+    "professionalTimelineSection": {
+      "label": "Linha do tempo profissional",
+      "title": "Experiência profissional"
     }
   },
   "ui": {
@@ -33,6 +37,12 @@
       "professional-experience": "Experiência profissional",
       "tecnical-skills": "Habilidades técnicas",
       "hire-me": "Trabalhe comigo"
+    },
+    "timeline": {
+      "loadMore": {
+        "pt1": "Mostrar mais ",
+        "pt2": " experiências"
+      }
     }
   },
   "data": {
@@ -47,6 +57,52 @@
         "description": "Motor de indexação de alto rendimento para redes compatíveis com EVM, capaz de processar blocos de forma concorrente com zero perda de dados.",
         "ctaPrimary": "Saber mais"
       }
-    }
+    },
+    "profissionalExperience": [
+      {
+        "id": "01",
+        "period": "2023 — Presente",
+        "role": "Engenheiro Fullstack Rottior",
+        "company": "FullTech Innovations",
+        "description": "Liderando o desenvolvimento de funcionalidades core de banking. Otimização de server-side rendering com melhoria de 48% no LCP e integração de clusters PostgreSQL multi-região para alta disponibilidade.",
+        "bullets": [
+          "Mentoria de 3 desenvolvedores juniores em práticas modernas de arquitetura.",
+          "Design de arquitetura para motor de processamento de pagamentos em tempo real."
+        ]
+      },
+      {
+        "id": "02",
+        "period": "2021 — 2023",
+        "role": "Desenvolvedor Fullstack",
+        "company": "Digital Craft Studio",
+        "description": "Desenvolvimento de plataformas SaaS personalizadas para clientes corporativos nos setores de saúde e logística. Foco na criação de componentes de UI escaláveis e integrações eficientes na camada de API.",
+        "bullets": [
+          "Redução de 60% nos ciclos de deploy através da implementação de pipelines automatizados.",
+          "Migração bem-sucedida de aplicações legadas em PHP para a stack React/Next.js."
+        ]
+      },
+      {
+        "id": "03",
+        "period": "2023 — Presente",
+        "role": "Engenheiro Fullstack Rottior",
+        "company": "FullTech Innovations",
+        "description": "Liderando o desenvolvimento de funcionalidades core de banking. Otimização de server-side rendering com melhoria de 48% no LCP e integração de clusters PostgreSQL multi-região para alta disponibilidade.",
+        "bullets": [
+          "Mentoria de 3 desenvolvedores juniores em práticas modernas de arquitetura.",
+          "Design de arquitetura para motor de processamento de pagamentos em tempo real."
+        ]
+      },
+      {
+        "id": "04",
+        "period": "2021 — 2023",
+        "role": "Desenvolvedor Fullstack",
+        "company": "Digital Craft Studio",
+        "description": "Desenvolvimento de plataformas SaaS personalizadas para clientes corporativos nos setores de saúde e logística. Foco na criação de componentes de UI escaláveis e integrações eficientes na camada de API.",
+        "bullets": [
+          "Redução de 60% nos ciclos de deploy através da implementação de pipelines automatizados.",
+          "Migração bem-sucedida de aplicações legadas em PHP para a stack React/Next.js."
+        ]
+      }
+    ]
   }
 }

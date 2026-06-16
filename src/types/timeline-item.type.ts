@@ -1,4 +1,5 @@
 export type TimelineItem = {
+  id: string
   period: string
   role: string
   company: string

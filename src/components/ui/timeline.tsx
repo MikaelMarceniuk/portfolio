@@ -5,6 +5,7 @@ import { useRef, useState } from 'react'
 import { AnimatedButton } from './animated-button'
 import { TimelineItem } from '@/types/timeline-item.type'
 import { ChevronDown } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 const INITIAL_COUNT = 2
 const LOAD_MORE_COUNT = 2
@@ -124,15 +125,15 @@ const TimelineCard = ({ item, index }: TimelineCardProps) => {
   )
 }
 
-type TimelineProps = {
-  items: TimelineItem[]
-}
-
-export const Timeline = ({ items }: TimelineProps) => {
+export const Timeline = () => {
+  const t = useTranslations('ui.timeline')
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT)
   const lineRef = useRef<HTMLDivElement>(null)
   const lineInView = useInView(lineRef, { once: true })
 
+  const items = useTranslations('data').raw(
+    'profissionalExperience'
+  ) as TimelineItem[]
   const visibleItems = items.slice(0, visibleCount)
   const hasMore = visibleCount < items.length
   const remaining = items.length - visibleCount
@@ -156,11 +157,7 @@ export const Timeline = ({ items }: TimelineProps) => {
       <div className="space-y-12">
         <AnimatePresence initial={false}>
           {visibleItems.map((item, i) => (
-            <TimelineCard
-              key={item.company + item.period}
-              item={item}
-              index={i}
-            />
+            <TimelineCard key={item.id} item={item} index={i} />
           ))}
         </AnimatePresence>
       </div>
@@ -178,7 +175,8 @@ export const Timeline = ({ items }: TimelineProps) => {
               onClick={handleLoadMore}
               icon={<ChevronDown size={15} />}
             >
-              Show {Math.min(remaining, LOAD_MORE_COUNT)} more
+              {t('loadMore.pt1')} {Math.min(remaining, LOAD_MORE_COUNT)}{' '}
+              {t('loadMore.pt2')}
             </AnimatedButton>
           </motion.div>
         )}

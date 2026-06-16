@@ -24,6 +24,10 @@
     "featuredWorkSection": {
       "label": "Independent Projects",
       "title": "Featured Work"
+    },
+    "professionalTimelineSection": {
+      "label": "Professional Timeline",
+      "title": "Professional Experience"
     }
   },
   "ui": {
@@ -33,6 +37,12 @@
       "professional-experience": "Professional experience",
       "tecnical-skills": "Technical skills",
       "hire-me": "Hire me"
+    },
+    "timeline": {
+      "loadMore": {
+        "pt1": "Show ",
+        "pt2": "  more"
+      }
     }
   },
   "data": {
@@ -47,6 +57,52 @@
         "description": "High-throughput indexing engine for EVM-compatible networks, capable of processing blocks concurrently with zero data loss.",
         "ctaPrimary": "Know more"
       }
-    }
+    },
+    "profissionalExperience": [
+      {
+        "id": "01",
+        "period": "2023 — Present",
+        "role": "Rottior Fullstack Engineer",
+        "company": "FullTech Innovations",
+        "description": "Leading the development of core banking features. Optimised server-side rendering for a 48% improvement in LCP and integrated multi-region PostgreSQL clusters for high availability.",
+        "bullets": [
+          "Mentoring 3 junior developers on modern architecture practices.",
+          "Architecture design for real-time payment processor engine."
+        ]
+      },
+      {
+        "id": "02",
+        "period": "2021 — 2023",
+        "role": "Fullstack Developer",
+        "company": "Digital Craft Studio",
+        "description": "Developed custom SaaS platforms for enterprise clients across healthcare and logistics industries. Focused on creating scalable UI components and efficient API layer integrations.",
+        "bullets": [
+          "Reduced deployment cycles by 60% through automated pipeline implementations.",
+          "Successfully migrated legacy PHP apps to React/Next.js stacks."
+        ]
+      },
+      {
+        "id": "03",
+        "period": "2023 — Present",
+        "role": "Rottior Fullstack Engineer",
+        "company": "FullTech Innovations",
+        "description": "Leading the development of core banking features. Optimised server-side rendering for a 48% improvement in LCP and integrated multi-region PostgreSQL clusters for high availability.",
+        "bullets": [
+          "Mentoring 3 junior developers on modern architecture practices.",
+          "Architecture design for real-time payment processor engine."
+        ]
+      },
+      {
+        "id": "04",
+        "period": "2021 — 2023",
+        "role": "Fullstack Developer",
+        "company": "Digital Craft Studio",
+        "description": "Developed custom SaaS platforms for enterprise clients across healthcare and logistics industries. Focused on creating scalable UI components and efficient API layer integrations.",
+        "bullets": [
+          "Reduced deployment cycles by 60% through automated pipeline implementations.",
+          "Successfully migrated legacy PHP apps to React/Next.js stacks."
+        ]
+      }
+    ]
   }
 }
