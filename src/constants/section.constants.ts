@@ -7,4 +7,5 @@ export const SECTIONS = {
   ABOUT: 'about',
   FEATURED_WORK: 'featured-work',
   PROFESSIONAL_EXPERIENCE: 'professional-experience',
+  TECHNICAL_SKILLS: 'tecnical_skills',
 } as const

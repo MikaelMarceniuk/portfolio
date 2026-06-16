@@ -4,7 +4,7 @@ import { SkillsTicker } from '@/components/sections/skills-ticker'
 import { AboutSection } from '@/components/sections/about'
 import { FeaturedWorkSection } from '@/components/sections/featured-work'
 import { ProfessionalTimelineSection } from '@/components/sections/professional-timeline.section'
-import { TechnicalArsenalSection } from '@/components/sections/technical-arsenal.section'
+import { TechnicalSkillsSection } from '@/components/sections/technical-skills'
 import { ContactSection } from '@/components/sections/contact.section'
 
 export default function Page() {
@@ -16,7 +16,7 @@ export default function Page() {
       <AboutSection />
       <FeaturedWorkSection />
       <ProfessionalTimelineSection />
-      <TechnicalArsenalSection />
+      <TechnicalSkillsSection />
       <ContactSection />
     </main>
   )
