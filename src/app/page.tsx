@@ -2,7 +2,7 @@ import { Navbar } from '@/components/sections/navbar'
 import { HeroSection } from '@/components/sections/hero.section'
 import { SkillsTicker } from '@/components/sections/skills-ticker'
 import { AboutSection } from '@/components/sections/about'
-import { ProjectsSection } from '@/components/sections/projects.section'
+import { FeaturedWorkSection } from '@/components/sections/featured-work'
 import { ExperienceSection } from '@/components/sections/experience.section'
 import { TechnicalArsenalSection } from '@/components/sections/technical-arsenal.section'
 import { ContactSection } from '@/components/sections/contact.section'
@@ -14,7 +14,7 @@ export default function Page() {
       <HeroSection />
       <SkillsTicker />
       <AboutSection />
-      <ProjectsSection />
+      <FeaturedWorkSection />
       <ExperienceSection />
       <TechnicalArsenalSection />
       <ContactSection />
