@@ -1,4 +1,3 @@
-import { Navbar } from '@/components/sections/navbar'
 import { HeroSection } from '@/components/sections/hero.section'
 import { SkillsTicker } from '@/components/sections/skills-ticker'
 import { AboutSection } from '@/components/sections/about'
@@ -10,7 +9,6 @@ import { ContactSection } from '@/components/sections/contact'
 export default function Page() {
   return (
     <main>
-      <Navbar />
       <HeroSection />
       <SkillsTicker />
       <AboutSection />
