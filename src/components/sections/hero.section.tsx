@@ -3,12 +3,14 @@ import { BaseSection } from '../base-section'
 import { SectionLabel } from '../section-label'
 import { GalaxyBackground } from '../galaxy-background'
 import { AnimatedText } from '../ui/animated-text'
+import { SECTIONS } from '@/constants/section.constants'
 
 export const HeroSection = () => {
   return (
     <BaseSection
-      id="#hero"
-      className="relative flex min-h-dvh flex-col justify-center bg-background px-4 py-16 sm:px-6 sm:py-24"
+      id="hero"
+      isOdd
+      className="relative flex min-h-dvh flex-col justify-center px-4 py-16 sm:px-6 sm:py-24"
     >
       <GalaxyBackground />
 
@@ -32,10 +34,10 @@ export const HeroSection = () => {
         {/* CTAs */}
         <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
           <a
-            href="#projects"
+            href={`#${SECTIONS.ABOUT}`}
             className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 font-mono text-[0.75rem] tracking-[0.06em] text-primary-foreground no-underline transition-colors duration-200 hover:bg-(--accent-hover) sm:w-auto sm:justify-start"
           >
-            View Projects
+            Get to know me
             <ArrowRight size={14} />
           </a>
 

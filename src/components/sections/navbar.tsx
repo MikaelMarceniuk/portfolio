@@ -1,11 +1,12 @@
 'use client'
 
+import { SECTION_VALUES } from '@/constants/section.constants'
 import { useState, useEffect } from 'react'
 
-const navLinks = [
-  { label: 'Home', href: '#hero' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+const navLinks: { label: string; href: SECTION_VALUES }[] = [
+  // { label: 'Home', href: '#hero' },
+  // { label: 'Experience', href: '#experience' },
+  // { label: 'Contact', href: '#contact' },
 ]
 
 export function Navbar() {

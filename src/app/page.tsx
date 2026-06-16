@@ -1,7 +1,7 @@
 import { Navbar } from '@/components/sections/navbar'
 import { HeroSection } from '@/components/sections/hero.section'
 import { SkillsTicker } from '@/components/sections/skills-ticker'
-import { AboutSection } from '@/components/sections/about.section'
+import { AboutSection } from '@/components/sections/about'
 import { ProjectsSection } from '@/components/sections/projects.section'
 import { ExperienceSection } from '@/components/sections/experience.section'
 import { TechnicalArsenalSection } from '@/components/sections/technical-arsenal.section'
