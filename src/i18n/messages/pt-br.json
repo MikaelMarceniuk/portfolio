@@ -43,6 +43,9 @@
       "tecnical-skills": "Habilidades técnicas",
       "hire-me": "Trabalhe comigo"
     },
+    "footer": {
+      "credits": "construido por eu mesmo"
+    },
     "timeline": {
       "loadMore": {
         "pt1": "Mostrar mais ",

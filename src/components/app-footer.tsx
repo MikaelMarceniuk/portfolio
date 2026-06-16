@@ -1,11 +1,14 @@
 'use client'
 
 import { MessageCircle } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { FaLinkedinIn } from 'react-icons/fa'
 import { SiGithub } from 'react-icons/si'
 
 // TODO Refactor
 export const AppFooter = () => {
+  const t = useTranslations('ui.footer')
+
   return (
     <footer
       className="border-t px-6 py-6"
@@ -62,7 +65,7 @@ export const AppFooter = () => {
           className="font-mono text-[10px] tracking-widest uppercase"
           style={{ color: 'var(--fg-muted)' }}
         >
-          © {new Date().getFullYear()} — built with precision
+          © {new Date().getFullYear()} — {t('credits')}
         </p>
       </div>
     </footer>
