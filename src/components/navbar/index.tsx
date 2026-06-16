@@ -9,10 +9,12 @@ import { AnimatedButton } from '../ui/animated-button'
 import { NeonLine } from './neon-line'
 import { AnimatedText } from '../ui/animated-text'
 import { LocaleSwitcher } from '../locale-switcher'
+import { useTranslations } from 'next-intl'
 
 export const AppNavbar = () => {
+  const t = useTranslations('ui.navbar')
   const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState<string>('hero')
+  const [activeSection, setActiveSection] = useState<SECTION_VALUES>('hero')
   const pathname = usePathname()
   const isHome = pathname === '/'
 
@@ -29,7 +31,7 @@ export const AppNavbar = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         const active = entries.find((entry) => entry.isIntersecting)
-        if (active) setActiveSection(active.target.id)
+        if (active) setActiveSection(active.target.id as SECTION_VALUES)
       },
       { rootMargin: '-30% 0px -40% 0px' }
     )
@@ -64,7 +66,7 @@ export const AppNavbar = () => {
         </Link>
 
         <ul className="hidden items-center gap-8 text-sm font-medium md:flex">
-          {NAV_ITEMS.map(({ id, label }) => {
+          {NAV_ITEMS.map(({ id }) => {
             const isActive = activeSection === id
             return (
               <li key={id} className="relative py-2">
@@ -76,7 +78,7 @@ export const AppNavbar = () => {
                       : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
-                  <span className="relative z-10">{label}</span>
+                  <span className="relative z-10">{t(id)}</span>
                   {isActive && <NeonLine />}
                 </Link>
               </li>
@@ -87,7 +89,7 @@ export const AppNavbar = () => {
         <div className="flex items-center gap-4">
           <LocaleSwitcher />
           <AnimatedButton asChild>
-            <Link href={getHref(SECTIONS.CONTACT)}>Hire Me</Link>
+            <Link href={getHref(SECTIONS.CONTACT)}>{t('hire-me')}</Link>
           </AnimatedButton>
         </div>
       </nav>

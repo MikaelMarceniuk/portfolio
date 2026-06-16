@@ -1,1 +1,26 @@
-{}
+{
+  "rootPage": {
+    "heroSection": {
+      "label": "Available for new oportunities",
+      "headline": {
+        "title": "Mikael Marceniuk",
+        "subtitle": "Fullstack Developer",
+        "description": {
+          "pt1": "Specialized in React, Next.js; modern backend systems.",
+          "pt2": "Building scalable architecture with high-performance execution."
+        }
+      },
+      "cta1": "Get to know me",
+      "cta2": "Download resume"
+    }
+  },
+  "ui": {
+    "navbar": {
+      "about": "About me",
+      "featured-work": "Featured work",
+      "professional-experience": "Professional experience",
+      "tecnical-skills": "Technical skills",
+      "hire-me": "Hire me"
+    }
+  }
+}

@@ -1,12 +1,10 @@
-import { SECTIONS } from './section.constants'
+import { SECTION_VALUES, SECTIONS } from './section.constants'
 
-export const NAV_ITEMS = [
-  { label: 'About me', id: SECTIONS.ABOUT },
-  { label: 'Featured work', id: SECTIONS.FEATURED_WORK },
+export const NAV_ITEMS: { id: SECTION_VALUES }[] = [
+  { id: SECTIONS.ABOUT },
+  { id: SECTIONS.FEATURED_WORK },
   {
-    label: 'Professional experience',
     id: SECTIONS.PROFESSIONAL_EXPERIENCE,
   },
-  { label: 'Skills', id: SECTIONS.TECHNICAL_SKILLS },
-  { label: 'Contact', id: SECTIONS.CONTACT },
+  { id: SECTIONS.TECHNICAL_SKILLS },
 ] as const
