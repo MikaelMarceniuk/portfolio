@@ -61,13 +61,15 @@
   "data": {
     "works": {
       "01": {
+        "category": "SaaS & Automation",
         "title": "NexusCRM",
-        "description": "High-frequency trading interface for cryptocurrency assets with real-time WebSocket updates and custom charting libraries for institutional investors.",
+        "description": "Fullstack CRM built for businesses that rely on WhatsApp, Instagram and Facebook as their primary communication channel. Features real-time messaging, contact and pipeline management, and automated workflows.",
         "ctaPrimary": "Know more"
       },
       "02": {
+        "category": "AI & Productivity",
         "title": "Speaker Trainer for Business",
-        "description": "High-throughput indexing engine for EVM-compatible networks, capable of processing blocks concurrently with zero data loss.",
+        "description": "AI-powered web app for deliberate speaking practice under professional pressure. Users record responses to high-stakes scenarios, receive automated feedback across 5 criteria, re-record, and see improvement between attempts.",
         "ctaPrimary": "Know more"
       }
     },

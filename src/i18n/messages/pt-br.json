@@ -61,14 +61,16 @@
   "data": {
     "works": {
       "01": {
+        "category": "SaaS & Automação",
         "title": "NexusCRM",
-        "description": "Interface de negociação de alta frequência para criptoativos com atualizações em tempo real via WebSockets e bibliotecas de gráficos personalizadas para investidores institucionais.",
-        "ctaPrimary": "Saber mais"
+        "description": "CRM fullstack construído para empresas que utilizam o WhatsApp, Instagram e Facebook como principal canal de comunicação. Mensagens em tempo real, gestão de contatos e pipelines, e automação de fluxos de atendimento.",
+        "ctaPrimary": "Saiba mais"
       },
       "02": {
+        "category": "IA & Produtividade",
         "title": "Speaker Trainer for Business",
-        "description": "Motor de indexação de alto rendimento para redes compatíveis com EVM, capaz de processar blocos de forma concorrente com zero perda de dados.",
-        "ctaPrimary": "Saber mais"
+        "description": "Web app com IA para prática deliberada de comunicação profissional em inglês sob pressão. O usuário grava respostas para cenários reais, recebe feedback automático em 5 critérios, regrava e visualiza a evolução entre tentativas.",
+        "ctaPrimary": "Saiba mais"
       }
     },
     "profissionalExperience": [

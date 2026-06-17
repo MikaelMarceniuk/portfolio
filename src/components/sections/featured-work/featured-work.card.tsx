@@ -33,7 +33,7 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
         <div className="flex items-center gap-2 font-mono text-xs tracking-widest text-primary uppercase">
           <span>{work.order}</span>
           <span className="text-border-subtle">/</span>
-          <span>{work.category}</span>
+          <span>{t(`${work.id}.category`)}</span>
         </div>
 
         {/* Título do Projeto */}
