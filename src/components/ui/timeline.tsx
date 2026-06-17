@@ -86,12 +86,6 @@ const TimelineCard = ({ item, index }: TimelineCardProps) => {
             background: 'var(--surface)',
           }}
         >
-          <p
-            className="mb-4 text-sm leading-relaxed"
-            style={{ color: 'var(--fg-muted)', lineHeight: '1.7' }}
-          >
-            {item.description}
-          </p>
           <ul className="space-y-2">
             {item.bullets.map((bullet, j) => (
               <motion.li

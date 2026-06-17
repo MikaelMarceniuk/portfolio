@@ -1,13 +1,13 @@
 {
   "rootPage": {
     "heroSection": {
-      "label": "Available for new oportunities",
+      "label": "Available for new opportunities",
       "headline": {
         "title": "Mikael Marceniuk",
         "subtitle": "Fullstack Developer",
         "description": {
-          "pt1": "Specialized in React, Next.js; modern backend systems.",
-          "pt2": "Building scalable architecture with high-performance execution."
+          "pt1": "Building high-impact web, mobile, and backend systems at scale.",
+          "pt2": "From billions of records to real-time failover, engineered to perform."
         }
       },
       "cta1": "Get to know me",
@@ -15,10 +15,11 @@
     },
     "aboutSection": {
       "label": "About me",
-      "title": "Crafting digital experiences with precision.",
+      "title": "Engineering systems that scale and deliver real impact.",
       "description": {
-        "pt1": "I am a software engineer focused on building robust fullstack applications. My journey involves deep-diving into complex architectural problems and delivering clean, maintainable code that drives business value.",
-        "pt2": "Beyond coding, I focus on system performance, developer experience, and creating seamless user interfaces that feel intuitive and powerful."
+        "pt1": "I'm a fullstack developer with 6+ years of experience building web, mobile, and backend systems across betting, enterprise automation, and logistics.",
+        "pt2": "I've worked on systems handling billions of records, built real-time failover infrastructure across microservices, and delivered features that drove measurable revenue growth.",
+        "pt3": "I'm comfortable owning full delivery cycles, from architecture decisions to production, working independently or embedded in cross-functional teams."
       }
     },
     "featuredWorkSection": {
@@ -73,46 +74,47 @@
     "profissionalExperience": [
       {
         "id": "01",
-        "period": "2023 — Present",
-        "role": "Rottior Fullstack Engineer",
-        "company": "FullTech Innovations",
-        "description": "Leading the development of core banking features. Optimised server-side rendering for a 48% improvement in LCP and integrated multi-region PostgreSQL clusters for high availability.",
+        "period": "February/2025 — May/2026",
+        "role": "Fullstack Developer",
+        "company": "Upbet",
         "bullets": [
-          "Mentoring 3 junior developers on modern architecture practices.",
-          "Architecture design for real-time payment processor engine."
+          "Delivered high-impact features for a regulated betting platform serving the Brazilian market, working across microservices, real-time systems, and fullstack development.",
+          "Built an automated failover system across microservices on AWS that detects provider outages and switches in real time, ensuring continuous platform availability.",
+          "Participated in a cross-continental migration of billions of records from EU to Brazil using AWS and Python, ensuring zero data loss.",
+          "Developed a fullstack referral system in a 2-person team that drove approximately 10% revenue growth."
         ]
       },
       {
         "id": "02",
-        "period": "2021 — 2023",
+        "period": "July/2022 — February/2025",
         "role": "Fullstack Developer",
-        "company": "Digital Craft Studio",
-        "description": "Developed custom SaaS platforms for enterprise clients across healthcare and logistics industries. Focused on creating scalable UI components and efficient API layer integrations.",
+        "company": "FaliFe Technology and Innovation",
         "bullets": [
-          "Reduced deployment cycles by 60% through automated pipeline implementations.",
-          "Successfully migrated legacy PHP apps to React/Next.js stacks."
+          "Built and maintained mission-critical automation pipelines and internal systems for enterprise clients, eliminating manual workflows and improving operational visibility.",
+          "Designed an automation pipeline integrating 3 databases with Lecom, DocuSign, and Feedz via REST APIs, reducing a 4-day process to 2 hours.",
+          "Built a fullstack asset management system with NestJS and Next.js from scratch to replace Excel-based tracking, delivering instant reporting."
         ]
       },
       {
         "id": "03",
-        "period": "2023 — Present",
-        "role": "Rottior Fullstack Engineer",
-        "company": "FullTech Innovations",
-        "description": "Leading the development of core banking features. Optimised server-side rendering for a 48% improvement in LCP and integrated multi-region PostgreSQL clusters for high availability.",
+        "period": "June/2021 — July/2022",
+        "role": "Fullstack Developer",
+        "company": "Mouts Info",
         "bullets": [
-          "Mentoring 3 junior developers on modern architecture practices.",
-          "Architecture design for real-time payment processor engine."
+          "Worked across multiple client projects including an AbInBev enterprise product and a US manufacturing client, delivering fullstack features and data infrastructure independently.",
+          "Joined an AbInBev project 1 month behind schedule as the sole fullstack developer, onboarded in 2 weeks, and recovered the timeline within 1 month.",
+          "Architected an AWS message queue to process millions of Excel records asynchronously, preventing API blocking under high load, delivered solo in 2 weeks."
         ]
       },
       {
         "id": "04",
-        "period": "2021 — 2023",
+        "period": "June/2020 — June/2021",
         "role": "Fullstack Developer",
-        "company": "Digital Craft Studio",
-        "description": "Developed custom SaaS platforms for enterprise clients across healthcare and logistics industries. Focused on creating scalable UI components and efficient API layer integrations.",
+        "company": "Myp-7 Tecnologia",
         "bullets": [
-          "Reduced deployment cycles by 60% through automated pipeline implementations.",
-          "Successfully migrated legacy PHP apps to React/Next.js stacks."
+          "Joined as the sole React Native developer in a 5-person company and was promoted to fullstack within 1 month, owning both mobile and web delivery for a wholesale management product.",
+          "Built a mobile inventory feature integrating QR Code scanning and voice recognition to eliminate manual stock-taking operations.",
+          "Developed a fullstack damage reporting system in React and Java/Spring Boot with AWS integration, enabling real-time truck tracking and photo-based damage registration."
         ]
       }
     ]

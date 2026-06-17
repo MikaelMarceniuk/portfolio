@@ -15,8 +15,8 @@ export const LeftSide = () => {
 
       <div className="space-y-4 pt-4">
         <p className="text-muted-foreground">{t('description.pt1')}</p>
-
         <p className="text-muted-foreground">{t('description.pt2')}</p>
+        <p className="text-muted-foreground">{t('description.pt3')}</p>
       </div>
     </div>
   )

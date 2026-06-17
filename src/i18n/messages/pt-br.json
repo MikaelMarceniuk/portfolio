@@ -6,8 +6,8 @@
         "title": "Mikael Marceniuk",
         "subtitle": "Desenvolvedor Fullstack",
         "description": {
-          "pt1": "Especializado em React, Next.js e sistemas de backend modernos.",
-          "pt2": "Construindo arquiteturas escaláveis com execução de alta performance."
+          "pt1": "Construindo sistemas web, mobile e backend de alto impacto em escala real.",
+          "pt2": "De bilhões de registros a failover em tempo real, engenharia que performa."
         }
       },
       "cta1": "Saiba mais sobre mim",
@@ -15,10 +15,11 @@
     },
     "aboutSection": {
       "label": "Sobre mim",
-      "title": "Criando experiências digitais com precisão.",
+      "title": "Construindo sistemas que escalam e geram impacto real.",
       "description": {
-        "pt1": "Sou engenheiro de software focado na construção de aplicações fullstack robustas. Minha trajetória envolve mergulhar em problemas arquiteturais complexos e entregar código limpo e de fácil manutenção que gera valor real para o negócio.",
-        "pt2": "Além de codificar, foco em performance de sistemas, experiência do desenvolvedor e na criação de interfaces fluidas que parecem intuitivas e poderosas."
+        "pt1": "Sou desenvolvedor fullstack com mais de 6 anos de experiência entregando sistemas web, mobile e backend nos segmentos de apostas, automação enterprise e logística.",
+        "pt2": "Trabalhei em sistemas que processam bilhões de registros, construí infraestrutura de failover em tempo real em microserviços e entreguei features que geraram crescimento de receita mensurável.",
+        "pt3": "Tenho conforto em assumir ciclos completos de entrega, desde decisões de arquitetura até produção, de forma independente ou em times multifuncionais."
       }
     },
     "featuredWorkSection": {
@@ -73,46 +74,47 @@
     "profissionalExperience": [
       {
         "id": "01",
-        "period": "2023 — Presente",
-        "role": "Engenheiro Fullstack Rottior",
-        "company": "FullTech Innovations",
-        "description": "Liderando o desenvolvimento de funcionalidades core de banking. Otimização de server-side rendering com melhoria de 48% no LCP e integração de clusters PostgreSQL multi-região para alta disponibilidade.",
+        "period": "Fevereiro/2025 — Maio/2026",
+        "role": "Desenvolvedor Fullstack",
+        "company": "Upbet",
         "bullets": [
-          "Mentoria de 3 desenvolvedores juniores em práticas modernas de arquitetura.",
-          "Design de arquitetura para motor de processamento de pagamentos em tempo real."
+          "Entreguei features de alto impacto para uma plataforma de apostas regulamentada no mercado brasileiro, atuando em microserviços, sistemas em tempo real e desenvolvimento fullstack.",
+          "Construí um sistema de failover automático em microserviços na AWS que detecta quedas de provedor e realiza a troca em tempo real, garantindo disponibilidade contínua.",
+          "Atuei em uma migração intercontinental de bilhões de registros da EU para o Brasil usando AWS e Python, garantindo zero perda de dados.",
+          "Desenvolvi um sistema de indicações fullstack em um time de 2 pessoas que gerou aproximadamente 10% de crescimento de receita."
         ]
       },
       {
         "id": "02",
-        "period": "2021 — 2023",
+        "period": "Julho/2022 — Fevereiro/2025",
         "role": "Desenvolvedor Fullstack",
-        "company": "Digital Craft Studio",
-        "description": "Desenvolvimento de plataformas SaaS personalizadas para clientes corporativos nos setores de saúde e logística. Foco na criação de componentes de UI escaláveis e integrações eficientes na camada de API.",
+        "company": "FaliFe Technology and Innovation",
         "bullets": [
-          "Redução de 60% nos ciclos de deploy através da implementação de pipelines automatizados.",
-          "Migração bem-sucedida de aplicações legadas em PHP para a stack React/Next.js."
+          "Construí e mantive pipelines de automação críticos e sistemas internos para clientes enterprise, eliminando processos manuais e melhorando visibilidade operacional.",
+          "Projetei um pipeline de automação integrando 3 bancos de dados com Lecom, DocuSign e Feedz via REST APIs, reduzindo um processo de 4 dias para 2 horas.",
+          "Construí do zero um sistema fullstack de gestão de ativos com NestJS e Next.js para substituir controle em Excel, entregando relatórios instantâneos."
         ]
       },
       {
         "id": "03",
-        "period": "2023 — Presente",
-        "role": "Engenheiro Fullstack Rottior",
-        "company": "FullTech Innovations",
-        "description": "Liderando o desenvolvimento de funcionalidades core de banking. Otimização de server-side rendering com melhoria de 48% no LCP e integração de clusters PostgreSQL multi-região para alta disponibilidade.",
+        "period": "Junho/2021 — Julho/2022",
+        "role": "Desenvolvedor Fullstack",
+        "company": "Mouts Info",
         "bullets": [
-          "Mentoria de 3 desenvolvedores juniores em práticas modernas de arquitetura.",
-          "Design de arquitetura para motor de processamento de pagamentos em tempo real."
+          "Atuei em múltiplos projetos de clientes incluindo um produto enterprise da AbInBev e um cliente manufatureiro americano, entregando features fullstack e infraestrutura de dados de forma independente.",
+          "Ingressei em um projeto da AbInBev com 1 mês de atraso como único desenvolvedor fullstack, realizei onboarding em 2 semanas e recuperei o prazo em 1 mês.",
+          "Arquitetei uma fila de mensagens na AWS para processar milhões de registros Excel de forma assíncrona, evitando bloqueio da API sob alta carga, entregue solo em 2 semanas."
         ]
       },
       {
         "id": "04",
-        "period": "2021 — 2023",
+        "period": "Junho/2020 — Junho/2021",
         "role": "Desenvolvedor Fullstack",
-        "company": "Digital Craft Studio",
-        "description": "Desenvolvimento de plataformas SaaS personalizadas para clientes corporativos nos setores de saúde e logística. Foco na criação de componentes de UI escaláveis e integrações eficientes na camada de API.",
+        "company": "Myp-7 Tecnologia",
         "bullets": [
-          "Redução de 60% nos ciclos de deploy através da implementação de pipelines automatizados.",
-          "Migração bem-sucedida de aplicações legadas em PHP para a stack React/Next.js."
+          "Ingressei como único desenvolvedor React Native em uma empresa de 5 pessoas e fui promovido a fullstack em 1 mês, assumindo entrega mobile e web de um produto de gestão de atacados.",
+          "Desenvolvi uma feature mobile de gestão de estoque integrando leitura de QR Code e reconhecimento de voz para eliminar contagem manual.",
+          "Desenvolvi um sistema fullstack de registro de avarias em React e Java/Spring Boot com integração AWS, permitindo rastreamento de caminhões em tempo real e registro de avarias via fotos."
         ]
       }
     ]
