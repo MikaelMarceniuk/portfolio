@@ -8,6 +8,8 @@ import { AppNavbar } from '@/components/navbar'
 import { I18nProvider } from '@/components/i18n-provider'
 import { getLocale, getMessages } from 'next-intl/server'
 
+export { metadata } from '@/config/metadata'
+
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 const fontMono = Geist_Mono({
