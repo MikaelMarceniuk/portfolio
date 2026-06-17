@@ -14,17 +14,20 @@ export const SOCIAL_LINKS = [
     label: 'WhatsApp',
     value: 'https://wa.me/5516997965512',
     action: 'link' as const,
+    inFooter: true,
   },
   {
     icon: FaLinkedinIn,
     label: 'LinkedIn',
     value: 'https://www.linkedin.com/in/mikael-marceniuk/',
     action: 'link' as const,
+    inFooter: true,
   },
   {
     icon: SiGithub,
     label: 'GitHub',
     value: 'https://github.com/MikaelMarceniuk',
     action: 'link' as const,
+    inFooter: true,
   },
 ]

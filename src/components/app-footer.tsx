@@ -1,5 +1,6 @@
 'use client'
 
+import { SOCIAL_LINKS } from '@/constants/social-links.contants'
 import { MessageCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { FaLinkedinIn } from 'react-icons/fa'
@@ -23,42 +24,28 @@ export const AppFooter = () => {
         </p>
 
         <div className="flex items-center gap-6">
-          {[
-            {
-              icon: SiGithub,
-              href: 'https://github.com/mmarceniuk',
-              label: 'GitHub',
-            },
-            {
-              icon: FaLinkedinIn,
-              href: 'https://linkedin.com/in/mmarceniuk',
-              label: 'LinkedIn',
-            },
-            {
-              icon: MessageCircle,
-              href: 'https://wa.me/5511999999999',
-              label: 'WhatsApp',
-            },
-          ].map(({ icon: Icon, href, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="transition-colors"
-              style={{ color: 'var(--fg-muted)' }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.color = 'var(--fg)')
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLElement).style.color =
-                  'var(--fg-muted)')
-              }
-            >
-              <Icon size={15} />
-            </a>
-          ))}
+          {SOCIAL_LINKS.filter((link) => link.inFooter).map(
+            ({ icon: Icon, value, label }) => (
+              <a
+                key={label}
+                href={value}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="transition-colors"
+                style={{ color: 'var(--fg-muted)' }}
+                onMouseEnter={(e) =>
+                  ((e.currentTarget as HTMLElement).style.color = 'var(--fg)')
+                }
+                onMouseLeave={(e) =>
+                  ((e.currentTarget as HTMLElement).style.color =
+                    'var(--fg-muted)')
+                }
+              >
+                <Icon size={15} />
+              </a>
+            )
+          )}
         </div>
 
         <p
