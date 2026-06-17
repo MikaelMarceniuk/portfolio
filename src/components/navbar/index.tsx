@@ -153,7 +153,7 @@ export const AppNavbar = () => {
                 }`}
               >
                 {t(id)}
-                {isActive && <NeonLine />}
+                {isActive && mobileOpen && <NeonLine />}
               </Link>
             )
           })}
