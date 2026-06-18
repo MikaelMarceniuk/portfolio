@@ -4,7 +4,6 @@ import { SectionLabel } from '@/components/section-label'
 import { SectionTitle } from '@/components/section-title'
 import { useTranslations } from 'next-intl'
 
-// TODO Improve text
 export const LeftSide = () => {
   const t = useTranslations('rootPage.aboutSection')
 

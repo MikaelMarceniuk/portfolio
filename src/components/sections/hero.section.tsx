@@ -30,7 +30,6 @@ export const HeroSection = () => {
           <AnimatedText>{t('headline.subtitle')}</AnimatedText>
         </h1>
 
-        {/* TODO Improve the text */}
         <p className="mt-4 mb-0 max-w-2xl font-sans text-base leading-[1.7] text-muted-foreground sm:mt-6 sm:text-lg">
           {t('headline.description.pt1')}
           <br />

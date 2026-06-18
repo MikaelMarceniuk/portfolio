@@ -7,7 +7,6 @@ import { SectionTitle } from '../section-title'
 import { Timeline } from '../ui/timeline'
 import { useTranslations } from 'next-intl'
 
-// TODO Update jobs text
 export const ProfessionalTimelineSection = () => {
   const t = useTranslations('rootPage.professionalTimelineSection')
 

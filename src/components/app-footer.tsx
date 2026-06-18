@@ -1,12 +1,8 @@
 'use client'
 
 import { SOCIAL_LINKS } from '@/constants/social-links.contants'
-import { MessageCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import { FaLinkedinIn } from 'react-icons/fa'
-import { SiGithub } from 'react-icons/si'
 
-// TODO Refactor
 export const AppFooter = () => {
   const t = useTranslations('ui.footer')
 
