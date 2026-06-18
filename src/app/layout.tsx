@@ -7,6 +7,7 @@ import { AppFooter } from '@/components/app-footer'
 import { AppNavbar } from '@/components/navbar'
 import { I18nProvider } from '@/components/i18n-provider'
 import { getLocale, getMessages } from 'next-intl/server'
+import { UmamiAnalytics } from '@/components/umami-analytics.script'
 
 export { metadata } from '@/config/metadata'
 
@@ -42,6 +43,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider>{children}</ThemeProvider>
           <AppFooter />
         </I18nProvider>
+        <UmamiAnalytics />
       </body>
     </html>
   )
