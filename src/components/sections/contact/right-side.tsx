@@ -37,17 +37,26 @@ export const ContactRightSide = () => {
           viewport={{ once: true }}
         >
           {item.action === 'copy' ? (
-            <CopyEmailRow
-              icon={item.icon}
-              label={item.label}
-              value={item.value}
-            />
+            <div
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.umami) {
+                  window.umami.track(item.eventName)
+                }
+              }}
+            >
+              <CopyEmailRow
+                icon={item.icon}
+                label={item.label}
+                value={item.value}
+              />
+            </div>
           ) : (
             <a
               href={item.value}
               target="_blank"
               rel="noopener noreferrer"
               className="block transition-opacity hover:opacity-70"
+              data-umami-event={item.eventName}
             >
               <LinkRow icon={item.icon} label={item.label} value={item.value} />
             </a>

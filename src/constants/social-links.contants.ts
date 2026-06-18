@@ -8,6 +8,7 @@ export const SOCIAL_LINKS = [
     label: 'mikael@mmarceniuk.dev',
     value: 'mikael@mmarceniuk.dev',
     action: 'copy' as const,
+    eventName: 'Email copied',
   },
   {
     icon: SiWhatsapp,
@@ -15,6 +16,7 @@ export const SOCIAL_LINKS = [
     value: 'https://wa.me/5516997965512',
     action: 'link' as const,
     inFooter: true,
+    eventName: 'WhatsApp click',
   },
   {
     icon: FaLinkedinIn,
@@ -22,6 +24,7 @@ export const SOCIAL_LINKS = [
     value: 'https://www.linkedin.com/in/mikael-marceniuk/',
     action: 'link' as const,
     inFooter: true,
+    eventName: 'LinkedIn click',
   },
   {
     icon: SiGithub,
@@ -29,5 +32,6 @@ export const SOCIAL_LINKS = [
     value: 'https://github.com/MikaelMarceniuk',
     action: 'link' as const,
     inFooter: true,
+    eventName: 'GitHub click',
   },
 ]
