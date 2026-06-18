@@ -19,8 +19,9 @@ export const WORK_DATA: FeaturedWork[] = [
     ],
     ctaPrimary: {
       text: '',
-      hrefTo: '/work/nexus-crm',
+      hrefTo: 'https://github.com/MikaelMarceniuk/nexus-crm',
     },
+    imageUrl: '/works/nexuscrm-mockup.png',
     isFeatured: true,
   },
   {
@@ -41,8 +42,9 @@ export const WORK_DATA: FeaturedWork[] = [
     ],
     ctaPrimary: {
       text: '',
-      hrefTo: '/work/speaker-trainer-for-business',
+      hrefTo: 'https://github.com/MikaelMarceniuk/speaker-trainer-for-business',
     },
+    imageUrl: '/works/speaker-trainer-for-business-mockup.png',
     isFeatured: true,
   },
 ]

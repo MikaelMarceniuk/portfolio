@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { AnimatedButton } from '@/components/ui/animated-button'
 import { cn } from '@/lib/utils'
 import { FeaturedWork } from '@/types/featured-work.type'
 import { useTranslations } from 'next-intl'
@@ -61,13 +61,15 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
         {/* Botões de Ação */}
         <div className="mt-4 flex flex-wrap gap-3">
           {work.ctaPrimary && (
-            // TODO Improve this Link
-            <Link
-              href={work.ctaPrimary.hrefTo}
-              className="cursor-pointer rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:opacity-90"
-            >
-              {t(`${work.id}.ctaPrimary`)}
-            </Link>
+            <AnimatedButton asChild>
+              <Link
+                href={work.ctaPrimary.hrefTo}
+                target="_blank"
+                className="cursor-pointer rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary shadow-sm transition-all hover:opacity-90"
+              >
+                {t(`${work.id}.ctaPrimary`)}
+              </Link>
+            </AnimatedButton>
           )}
           {work.ctaSecondary && (
             <button className="cursor-pointer rounded-md border border-border bg-transparent px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-secondary">
@@ -84,13 +86,13 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
             : 'md:order-last md:justify-end'
         }`}
       >
-        <div className="relative aspect-16/10 w-full max-w-md overflow-hidden rounded-lg border border-border shadow-2xl">
+        <div className="relative aspect-16/10 w-full overflow-hidden">
           <Image
-            src="/placeholder.svg"
+            src={work.imageUrl}
             alt={work.title}
             fill
-            sizes="(max-width: 768px) 100vw, 450px"
-            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 40vw, 500px"
+            className="object-contain"
             priority={work.order < 2}
           />
         </div>

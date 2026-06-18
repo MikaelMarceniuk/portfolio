@@ -10,5 +10,6 @@ export type FeaturedWork = {
     hrefTo: string
   }
   ctaSecondary?: string
+  imageUrl: string
   isFeatured: boolean
 }
