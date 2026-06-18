@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       'Fullstack Developer with 6+ years of experience building web, mobile, and backend systems at scale.',
     images: [
       {
-        url: '/opengraph-image',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Mikael Marceniuk | Fullstack Developer',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: 'Mikael Marceniuk | Fullstack Developer',
     description:
       'Fullstack Developer with 6+ years of experience building web, mobile, and backend systems at scale.',
-    images: ['/opengraph-image'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
