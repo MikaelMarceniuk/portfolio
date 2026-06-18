@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-// TODO Add image
 export const RightSide = () => {
   return (
     <div className="flex justify-center md:justify-end">
@@ -14,7 +13,7 @@ export const RightSide = () => {
         }}
       >
         <Image
-          src="/placeholder.svg"
+          src="/about-photo.webp"
           alt="About me"
           width={550}
           height={650}
