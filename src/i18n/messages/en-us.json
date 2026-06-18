@@ -71,6 +71,12 @@
         "title": "Speaker Trainer for Business",
         "description": "AI-powered web app for deliberate speaking practice under professional pressure. Users record responses to high-stakes scenarios, receive automated feedback across 5 criteria, re-record, and see improvement between attempts.",
         "ctaPrimary": "Know more"
+      },
+      "03": {
+        "category": "Landing Page",
+        "title": "Higher Up Business English",
+        "description": "Landing page for the only company in Brazil with BELF methodology (Business English as a Lingua Franca). Built with Next.js and analytics and SEO.",
+        "ctaPrimary": "Visit website"
       }
     },
     "profissionalExperience": [

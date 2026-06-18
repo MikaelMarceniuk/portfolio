@@ -71,6 +71,12 @@
         "title": "Speaker Trainer for Business",
         "description": "Web app com IA para prática deliberada de comunicação profissional em inglês sob pressão. O usuário grava respostas para cenários reais, recebe feedback automático em 5 critérios, regrava e visualiza a evolução entre tentativas.",
         "ctaPrimary": "Saiba mais"
+      },
+      "03": {
+        "category": "Landing Page",
+        "title": "Higher Up Business English",
+        "description": "Landing page para a única empresa no Brasil com metodologia BELF (Business English as a Lingua Franca). Desenvolvida com Next.js com analytics e SEO.",
+        "ctaPrimary": "Visitar site"
       }
     },
     "profissionalExperience": [

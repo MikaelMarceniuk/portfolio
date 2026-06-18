@@ -47,4 +47,18 @@ export const WORK_DATA: FeaturedWork[] = [
     imageUrl: '/works/speaker-trainer-for-business-mockup.png',
     isFeatured: true,
   },
+  {
+    id: '03',
+    order: 3,
+    category: 'Landing Page',
+    title: '',
+    description: '',
+    tags: ['Next.js', 'TypeScript', 'Analytics', 'SEO', 'CI/CD'],
+    ctaPrimary: {
+      text: '',
+      hrefTo: 'https://higher-up.com.br/',
+    },
+    imageUrl: '/works/higher-up-mockup.png',
+    isFeatured: true,
+  },
 ]
