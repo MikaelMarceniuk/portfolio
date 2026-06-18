@@ -7,7 +7,7 @@ export function proxy(request: NextRequest) {
   if (existingLocale) return response
 
   // Pega o país pelo header da Cloudflare
-  const country = request.headers.get('CF-IPCountry')
+  const country = request.headers.get('x-vercel-ip-country')
   console.log('proxy.country: ', country)
   const locale = country === 'BR' ? 'pt-br' : 'en-us'
 
