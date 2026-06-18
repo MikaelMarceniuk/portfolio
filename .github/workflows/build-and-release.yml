@@ -1,0 +1,39 @@
+name: Build and Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  packages: write
+  contents: read
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set Environment Variables
+        run: |
+          REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          echo "WEB_IMAGE=ghcr.io/$REPO_OWNER/portfolio" >> $GITHUB_ENV
+          echo "VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push Web
+        run: |
+          docker build . \
+            --file docker/dockerfile \
+            --tag ${{ env.WEB_IMAGE }}:latest \
+            --tag ${{ env.WEB_IMAGE }}:${{ env.VERSION }}
+
+          docker push ${{ env.WEB_IMAGE }}:latest
+          docker push ${{ env.WEB_IMAGE }}:${{ env.VERSION }}
