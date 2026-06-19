@@ -22,4 +22,14 @@ export const jsonLd = {
     'https://linkedin.com/in/mikael-marceniuk',
     'https://github.com/mmarceniuk',
   ],
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Freelance',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'São Paulo',
+    addressCountry: 'BR',
+  },
+  availableFor: 'https://schema.org/EmployerAggregateRating',
 }

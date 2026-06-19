@@ -19,6 +19,24 @@ export const metadata: Metadata = {
     'fullstack developer open to work',
     'Brazilian fullstack developer',
 
+    // Mercados que você está mirando
+    'fullstack developer Germany remote',
+    'fullstack developer Canada remote',
+    'fullstack developer USA remote',
+    'Node.js developer Europe',
+    'Next.js developer Europe',
+
+    // Experiência específica que você tem
+    'fullstack developer fintech',
+    'fullstack developer betting platform',
+    'AWS fullstack developer',
+    'fullstack developer TypeScript',
+
+    // Mais específicas de São Paulo para mercado BR
+    'desenvolvedor fullstack São Paulo',
+    'desenvolvedor senior São Paulo',
+    'desenvolvedor Node.js São Paulo',
+
     // Intenção de contratação — nacional
     'desenvolvedor fullstack freelance',
     'desenvolvedor fullstack para contratar',
