@@ -8,6 +8,7 @@ import { AppNavbar } from '@/components/navbar'
 import { I18nProvider } from '@/components/i18n-provider'
 import { getLocale, getMessages } from 'next-intl/server'
 import { UmamiAnalytics } from '@/components/umami-analytics.script'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export { metadata } from '@/config/metadata'
 
@@ -44,6 +45,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           <AppFooter />
         </I18nProvider>
         <UmamiAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   )
