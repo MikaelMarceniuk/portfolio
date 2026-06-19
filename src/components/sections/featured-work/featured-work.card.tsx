@@ -100,7 +100,6 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 40vw, 500px"
             className="object-contain"
-            priority={work.order < 2}
           />
         </div>
       </div>

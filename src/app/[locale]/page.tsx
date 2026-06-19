@@ -5,15 +5,26 @@ import { FeaturedWorkSection } from '@/components/sections/featured-work'
 import { ProfessionalTimelineSection } from '@/components/sections/professional-timeline.section'
 import { TechnicalSkillsSection } from '@/components/sections/technical-skills'
 import { ContactSection } from '@/components/sections/contact'
-import { jsonLd } from '@/config/jsonld'
+import { setRequestLocale } from 'next-intl/server'
+import { JsonLDScript } from '@/components/scripts/jsonld.script'
 
-export default function Page() {
+export const dynamic = 'error'
+
+export function generateStaticParams() {
+  return [{ locale: 'en-us' }, { locale: 'pt-br' }]
+}
+
+type PageProps = {
+  params: Promise<{ locale: string }>
+}
+
+export default async function Page({ params }: PageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLDScript />
       <HeroSection />
       <SkillsTicker />
       <AboutSection />

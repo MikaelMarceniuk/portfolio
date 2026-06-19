@@ -1,23 +1,28 @@
+import createMiddleware from 'next-intl/middleware'
+import { routing } from './i18n'
 import { NextRequest, NextResponse } from 'next/server'
 
-export function proxy(request: NextRequest) {
-  const response = NextResponse.next()
+const intlMiddleware = createMiddleware(routing)
 
-  const existingLocale = request.cookies.get('NEXT_LOCALE')
-  if (existingLocale) return response
-
-  // Pega o país pelo header da Cloudflare
+function detectLocale(request: NextRequest): string {
   const country = request.headers.get('x-vercel-ip-country')
-  console.log('proxy.country: ', country)
-  const locale = country === 'BR' ? 'pt-br' : 'en-us'
+  return country === 'BR' ? 'pt-br' : 'en-us'
+}
 
-  response.cookies.set('NEXT_LOCALE', locale, {
-    path: '/',
-    maxAge: 60 * 60 * 24 * 365, // 1 ano
-    sameSite: 'lax',
-  })
+export default function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
 
-  return response
+  const hasLocale = routing.locales.some((locale) =>
+    pathname.startsWith(`/${locale}`)
+  )
+
+  if (!hasLocale) {
+    const locale = detectLocale(request)
+    request.nextUrl.pathname = `/${locale}${pathname}`
+    return NextResponse.redirect(request.nextUrl)
+  }
+
+  return intlMiddleware(request)
 }
 
 export const config = {

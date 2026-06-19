@@ -1,13 +1,12 @@
 import { Geist_Mono, Inter } from 'next/font/google'
 
-import './globals.css'
-import { ThemeProvider } from '@/components/theme-provider'
+import '@/styles/globals.css'
 import { cn } from '@/lib/utils'
 import { AppFooter } from '@/components/app-footer'
 import { AppNavbar } from '@/components/navbar'
 import { I18nProvider } from '@/components/i18n-provider'
-import { getLocale, getMessages } from 'next-intl/server'
-import { UmamiAnalytics } from '@/components/umami-analytics.script'
+import { getMessages, setRequestLocale } from 'next-intl/server'
+import { UmamiAnalytics } from '@/components/scripts/umami-analytics.script'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export { metadata } from '@/config/metadata'
@@ -21,10 +20,20 @@ const fontMono = Geist_Mono({
 
 type RootLayoutProps = {
   children: React.ReactNode
+  params: Promise<{ locale: string }>
 }
 
-export default async function RootLayout({ children }: RootLayoutProps) {
-  const locale = await getLocale()
+export function generateStaticParams() {
+  return [{ locale: 'en-us' }, { locale: 'pt-br' }]
+}
+
+export default async function RootLayout({
+  children,
+  params,
+}: RootLayoutProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   const messages = await getMessages()
 
   return (
@@ -41,7 +50,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <body>
         <I18nProvider locale={locale} messages={messages}>
           <AppNavbar />
-          <ThemeProvider>{children}</ThemeProvider>
+          {children}
           <AppFooter />
         </I18nProvider>
         <UmamiAnalytics />

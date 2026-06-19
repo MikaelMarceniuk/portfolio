@@ -1,7 +1,7 @@
 'use client'
 
 import { useLocale } from 'next-intl'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation' // IMPORTANTE: Adicionado o usePathname
 import { useTransition } from 'react'
 import { Languages, Check } from 'lucide-react'
 
@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { setLocaleAction } from '@/i18n/actions/set-locale.action'
-import { AvailableLocales } from '@/i18n/types/available-locales.type'
+import { AvailableLocales } from '@/i18n/available-locales'
 
 const LANGUAGES: { code: AvailableLocales; label: string }[] = [
   { code: 'en-us', label: 'English' },
@@ -23,6 +23,7 @@ const LANGUAGES: { code: AvailableLocales; label: string }[] = [
 export const LocaleSwitcher = () => {
   const currentLocale = useLocale()
   const router = useRouter()
+  const pathname = usePathname()
   const [isPending, startTransition] = useTransition()
 
   const handleLanguageChange = (nextLocale: AvailableLocales) => {
@@ -30,7 +31,11 @@ export const LocaleSwitcher = () => {
 
     startTransition(async () => {
       await setLocaleAction(nextLocale)
-      router.refresh()
+      const segments = pathname.split('/')
+      segments[1] = nextLocale
+      const newPathname = segments.join('/')
+      const currentHash = window.location.hash
+      router.push(`${newPathname}${currentHash}`)
     })
   }
 

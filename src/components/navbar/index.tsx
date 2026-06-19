@@ -11,14 +11,18 @@ import { AnimatedText } from '../ui/animated-text'
 import { LocaleSwitcher } from '../locale-switcher'
 import { useTranslations } from 'next-intl'
 import { Menu, X } from 'lucide-react'
+import { AvailableLocales } from '@/i18n/available-locales'
 
 export const AppNavbar = () => {
   const t = useTranslations('ui.navbar')
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState<SECTION_VALUES>('hero')
   const [mobileOpen, setMobileOpen] = useState(false)
+
   const pathname = usePathname()
-  const isHome = pathname === '/'
+  const isHome =
+    pathname === '/' ||
+    AvailableLocales.some((locale) => pathname === `/${locale}`)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -62,8 +66,14 @@ export const AppNavbar = () => {
     return () => observer.disconnect()
   }, [isHome])
 
-  const getHref = (section: SECTION_VALUES) =>
-    isHome ? `#${section}` : `/#${section}`
+  // CORREÇÃO 2: Se estiver na Home, usa apenas o hash (evita recarregar a página).
+  // Se estiver em outra página, pega o idioma atual do pathname (ex: 'en-us') e monta a URL certa.
+  const getHref = (section: SECTION_VALUES) => {
+    if (isHome) return `#${section}`
+
+    const currentLocale = pathname.split('/')[1] || ''
+    return `/${currentLocale}#${section}`
+  }
 
   const handleMobileNavClick = () => setMobileOpen(false)
 
