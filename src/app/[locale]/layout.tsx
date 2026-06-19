@@ -1,13 +1,12 @@
 import { Geist_Mono, Inter } from 'next/font/google'
 
 import '@/styles/globals.css'
-import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 import { AppFooter } from '@/components/app-footer'
 import { AppNavbar } from '@/components/navbar'
 import { I18nProvider } from '@/components/i18n-provider'
-import { getLocale, getMessages, setRequestLocale } from 'next-intl/server'
-import { UmamiAnalytics } from '@/components/umami-analytics.script'
+import { getMessages, setRequestLocale } from 'next-intl/server'
+import { UmamiAnalytics } from '@/components/scripts/umami-analytics.script'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export { metadata } from '@/config/metadata'
@@ -51,7 +50,7 @@ export default async function RootLayout({
       <body>
         <I18nProvider locale={locale} messages={messages}>
           <AppNavbar />
-          <ThemeProvider>{children}</ThemeProvider>
+          {children}
           <AppFooter />
         </I18nProvider>
         <UmamiAnalytics />

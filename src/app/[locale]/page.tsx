@@ -5,8 +5,8 @@ import { FeaturedWorkSection } from '@/components/sections/featured-work'
 import { ProfessionalTimelineSection } from '@/components/sections/professional-timeline.section'
 import { TechnicalSkillsSection } from '@/components/sections/technical-skills'
 import { ContactSection } from '@/components/sections/contact'
-import { jsonLd } from '@/config/jsonld'
 import { setRequestLocale } from 'next-intl/server'
+import { JsonLDScript } from '@/components/scripts/jsonld.script'
 
 export const dynamic = 'error'
 
@@ -24,10 +24,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLDScript />
       <HeroSection />
       <SkillsTicker />
       <AboutSection />

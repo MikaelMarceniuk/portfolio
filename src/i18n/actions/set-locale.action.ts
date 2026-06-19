@@ -1,7 +1,7 @@
 'use server'
 
 import { cookies } from 'next/headers'
-import { AvailableLocales } from '../types/available-locales.type'
+import { AvailableLocales } from '../available-locales'
 
 export async function setLocaleAction(locale: AvailableLocales) {
   const cookieStore = await cookies()

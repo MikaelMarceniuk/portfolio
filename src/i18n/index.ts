@@ -1,6 +1,6 @@
 import { getRequestConfig } from 'next-intl/server'
 import { defineRouting } from 'next-intl/routing'
-import { AvailableLocales } from './types/available-locales.type'
+import { AvailableLocales } from './available-locales'
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const locale = (await requestLocale) ?? 'en-us'
@@ -12,6 +12,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
 })
 
 export const routing = defineRouting({
-  locales: ['pt-br', 'en-us'] as AvailableLocales[],
+  locales: AvailableLocales,
   defaultLocale: 'en-us',
 })
