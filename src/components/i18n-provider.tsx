@@ -15,7 +15,11 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
   messages,
 }) => {
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
+    <NextIntlClientProvider
+      locale={locale}
+      messages={messages}
+      timeZone="America/Sao_Paulo"
+    >
       {children}
     </NextIntlClientProvider>
   )
