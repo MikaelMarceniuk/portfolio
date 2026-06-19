@@ -79,6 +79,9 @@ export const ContactRightSide = () => {
             viewport={{ once: true }}
             className="flex items-center gap-2 font-mono text-xs transition-opacity hover:opacity-70"
             style={{ color: 'var(--fg-muted)' }}
+            data-umami-event="download_cv"
+            data-umami-event-label={cv.label}
+            data-umami-event-file={cv.file}
           >
             <FileText size={13} style={{ color: 'var(--accent)' }} />
             {cv.label}

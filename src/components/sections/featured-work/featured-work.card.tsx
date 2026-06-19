@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatedButton } from '@/components/ui/animated-button'
-import { cn } from '@/lib/utils'
+import { cn, toSlug } from '@/lib/utils'
 import { FeaturedWork } from '@/types/featured-work.type'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
@@ -66,16 +66,23 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
                 href={work.ctaPrimary.hrefTo}
                 target="_blank"
                 className="cursor-pointer rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary shadow-sm transition-all hover:opacity-90"
+                data-umami-event="click_work_cta_primary"
+                data-umami-event-work={toSlug(t(`${work.id}.title`))}
+                data-umami-event-href={work.ctaPrimary.hrefTo}
               >
                 {t(`${work.id}.ctaPrimary`)}
               </Link>
             </AnimatedButton>
           )}
-          {work.ctaSecondary && (
-            <button className="cursor-pointer rounded-md border border-border bg-transparent px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-secondary">
+          {/* {work.ctaSecondary && (
+            <button
+              className="cursor-pointer rounded-md border border-border bg-transparent px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-secondary"
+              data-umami-event="click_work_cta_secondary"
+              data-umami-event-work={work.id}
+            >
               {work.ctaSecondary}
             </button>
-          )}
+          )} */}
         </div>
       </div>
 
