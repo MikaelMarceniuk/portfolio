@@ -6,8 +6,22 @@ import { ProfessionalTimelineSection } from '@/components/sections/professional-
 import { TechnicalSkillsSection } from '@/components/sections/technical-skills'
 import { ContactSection } from '@/components/sections/contact'
 import { jsonLd } from '@/config/jsonld'
+import { setRequestLocale } from 'next-intl/server'
 
-export default function Page() {
+export const dynamic = 'error'
+
+export function generateStaticParams() {
+  return [{ locale: 'en-us' }, { locale: 'pt-br' }]
+}
+
+type PageProps = {
+  params: Promise<{ locale: string }>
+}
+
+export default async function Page({ params }: PageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <main>
       <script

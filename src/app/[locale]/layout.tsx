@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 import { AppFooter } from '@/components/app-footer'
 import { AppNavbar } from '@/components/navbar'
 import { I18nProvider } from '@/components/i18n-provider'
-import { getLocale, getMessages } from 'next-intl/server'
+import { getLocale, getMessages, setRequestLocale } from 'next-intl/server'
 import { UmamiAnalytics } from '@/components/umami-analytics.script'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
@@ -21,10 +21,20 @@ const fontMono = Geist_Mono({
 
 type RootLayoutProps = {
   children: React.ReactNode
+  params: Promise<{ locale: string }>
 }
 
-export default async function RootLayout({ children }: RootLayoutProps) {
-  const locale = await getLocale()
+export function generateStaticParams() {
+  return [{ locale: 'en-us' }, { locale: 'pt-br' }]
+}
+
+export default async function RootLayout({
+  children,
+  params,
+}: RootLayoutProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   const messages = await getMessages()
 
   return (
