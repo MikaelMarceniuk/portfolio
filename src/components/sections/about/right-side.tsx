@@ -13,12 +13,11 @@ export const RightSide = () => {
         }}
       >
         <Image
-          src="/about-photo.webp"
+          src="/about.webp"
           alt="About me"
           width={550}
           height={650}
           className="h-auto w-full max-w-md object-cover"
-          sizes="(max-width: 768px) 100vw, 550px"
           priority
         />
       </div>
