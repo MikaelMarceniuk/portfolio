@@ -7,6 +7,7 @@ import { TechnicalSkillsSection } from '@/components/sections/technical-skills'
 import { ContactSection } from '@/components/sections/contact'
 import { setRequestLocale } from 'next-intl/server'
 import { JsonLDScript } from '@/components/scripts/jsonld.script'
+import { AvailableLocales } from '@/i18n/available-locales'
 
 export const dynamic = 'error'
 
@@ -15,7 +16,7 @@ export function generateStaticParams() {
 }
 
 type PageProps = {
-  params: Promise<{ locale: string }>
+  params: Promise<{ locale: AvailableLocales }>
 }
 
 export default async function Page({ params }: PageProps) {
@@ -24,7 +25,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main>
-      <JsonLDScript />
+      <JsonLDScript locale={locale} />
       <HeroSection />
       <SkillsTicker />
       <AboutSection />

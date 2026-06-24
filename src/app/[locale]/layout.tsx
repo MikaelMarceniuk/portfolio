@@ -8,8 +8,17 @@ import { I18nProvider } from '@/components/i18n-provider'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { UmamiAnalytics } from '@/components/scripts/umami-analytics.script'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { AvailableLocales } from '@/i18n/available-locales'
+import { getMetadata } from '@/config/metadata'
 
-export { metadata } from '@/config/metadata'
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AvailableLocales }>
+}) {
+  const { locale } = await params
+  return getMetadata(locale)
+}
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
