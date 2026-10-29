@@ -4,7 +4,7 @@ import { AnimatedButton } from '@/components/ui/animated-button'
 import { toSlug } from '@/lib/utils'
 import { FeaturedWork } from '@/types/featured-work.type'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowUpRight, X } from 'lucide-react'
+import { ArrowUpRight, Lock, X } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -63,6 +63,8 @@ const ModalPanel = ({ work }: { work: FeaturedWork }) => {
 
   const title = t(`${work.id}.title`)
   const decisions = t.raw(`${work.id}.decisions`) as string[]
+  // Projeto freelance: o código pertence ao cliente
+  const isFreelance = work.kind === 'freelance'
 
   return (
     <motion.div
@@ -103,6 +105,12 @@ const ModalPanel = ({ work }: { work: FeaturedWork }) => {
             <span>{work.order}</span>
             <span className="text-border-subtle">/</span>
             <span>{t(`${work.id}.category`)}</span>
+            {isFreelance && (
+              <>
+                <span className="text-border-subtle">·</span>
+                <span>{tUi('freelance')}</span>
+              </>
+            )}
           </div>
           <DialogPrimitive.Title className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             {title}
@@ -150,31 +158,44 @@ const ModalPanel = ({ work }: { work: FeaturedWork }) => {
           </div>
         </motion.section>
 
-        <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
-          <AnimatedButton asChild icon={<ArrowUpRight size={15} />}>
-            <Link
-              href={work.links.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-umami-event="click_work_see_it_live"
-              data-umami-event-work={toSlug(title)}
-              data-umami-event-href={work.links.live}
-            >
-              {tUi('seeItLive')}
-            </Link>
-          </AnimatedButton>
-          {work.links.repo && (
-            <Link
-              href={work.links.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-              data-umami-event="click_work_source_code"
-              data-umami-event-work={toSlug(title)}
-            >
-              <FaGithub size={15} />
-              {tUi('sourceCode')}
-            </Link>
+        <motion.div variants={fadeUp} className="flex flex-col gap-3">
+          <div className="flex flex-wrap gap-3">
+            <AnimatedButton asChild icon={<ArrowUpRight size={15} />}>
+              <Link
+                href={work.links.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-umami-event="click_work_see_it_live"
+                data-umami-event-work={toSlug(title)}
+                data-umami-event-href={work.links.live}
+              >
+                {tUi('seeItLive')}
+              </Link>
+            </AnimatedButton>
+            {work.links.repo && (
+              <Link
+                href={work.links.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                data-umami-event="click_work_source_code"
+                data-umami-event-work={toSlug(title)}
+              >
+                <FaGithub size={15} />
+                {tUi('sourceCode')}
+              </Link>
+            )}
+            {isFreelance && (
+              <span className="inline-flex items-center gap-2 rounded-md border border-dashed border-border px-4 py-3 text-sm font-medium text-muted-foreground">
+                <Lock size={15} />
+                {tUi('privateCode')}
+              </span>
+            )}
+          </div>
+          {isFreelance && (
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              {tUi('privateCodeNote')}
+            </p>
           )}
         </motion.div>
       </motion.div>

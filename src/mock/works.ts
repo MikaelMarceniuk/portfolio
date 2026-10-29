@@ -5,6 +5,7 @@ export const WORK_DATA: FeaturedWork[] = [
   {
     id: '01',
     order: 1,
+    kind: 'freelance',
     tags: [
       'Next.js',
       'MySQL',
@@ -26,6 +27,7 @@ export const WORK_DATA: FeaturedWork[] = [
   {
     id: '02',
     order: 2,
+    kind: 'personal',
     tags: [
       'MERN',
       'React',
@@ -47,6 +49,7 @@ export const WORK_DATA: FeaturedWork[] = [
   {
     id: '03',
     order: 3,
+    kind: 'freelance',
     tags: ['Next.js', 'next-intl', 'SEO', 'Umami', 'Docker', 'GitHub Actions'],
     links: {
       live: 'https://higher-up.com.br/',

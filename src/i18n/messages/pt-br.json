@@ -67,6 +67,9 @@
       "decisions": "Decisões técnicas",
       "stack": "Stack",
       "sourceCode": "Código fonte",
+      "freelance": "Freelance",
+      "privateCode": "Código privado",
+      "privateCodeNote": "Projeto feito para um cliente, então o código pertence a ele. Posso explicar a arquitetura numa conversa.",
       "close": "Fechar"
     }
   },

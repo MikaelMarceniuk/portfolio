@@ -29,8 +29,22 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
   const visibleTags = work.tags.slice(0, MAX_CARD_TAGS)
   const hiddenTagsCount = work.tags.length - visibleTags.length
 
+  // Clique em qualquer parte do card abre o modal, exceto nos links/botões internos
+  // e quando a pessoa só está selecionando texto
+  const handleCardClick = (e: React.MouseEvent<HTMLElement>) => {
+    if ((e.target as HTMLElement).closest('a, button')) return
+    if (window.getSelection()?.toString()) return
+
+    window.umami?.track('click_work_card', { work: toSlug(title) })
+    onOpenDetails()
+  }
+
+  // Hover em CSS (não em whileHover) para não interferir no layout/layoutId do framer
   return (
-    <article className="card-glow relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card">
+    <article
+      onClick={handleCardClick}
+      className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-card transition-[translate,box-shadow,border-color] duration-300 ease-out hover:border-primary/40 hover:shadow-[0_12px_32px_rgba(61,139,253,0.15)] motion-safe:hover:-translate-y-1"
+    >
       {showFeaturedBadge && work.isFeatured && (
         <motion.span
           initial={{ opacity: 0, scale: 0.8 }}
@@ -39,6 +53,12 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
         >
           {tUi('featured')}
         </motion.span>
+      )}
+
+      {work.kind === 'freelance' && (
+        <span className="absolute top-4 right-4 z-10 rounded-sm border border-primary/40 bg-background/80 px-2 py-0.5 font-mono text-[10px] tracking-widest text-primary uppercase backdrop-blur-sm">
+          {tUi('freelance')}
+        </span>
       )}
 
       {/* Imagem compartilhada com o modal (layoutId) */}
@@ -51,7 +71,7 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
           alt={title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-          className="object-contain p-3"
+          className="object-contain p-3 transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.04]"
         />
       </motion.div>
 
@@ -63,7 +83,7 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
           <span>{t(`${work.id}.category`)}</span>
         </div>
 
-        <h3 className="font-heading text-2xl font-bold tracking-tight text-foreground">
+        <h3 className="font-heading text-2xl font-bold tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary">
           {title}
         </h3>
 
