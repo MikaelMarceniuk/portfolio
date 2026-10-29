@@ -56,27 +56,57 @@
     "copyEmailRow": {
       "copy": "copiar",
       "copied": "copiado"
+    },
+    "featuredWork": {
+      "howItsBuilt": "Como foi feito",
+      "seeItLive": "Ver no ar",
+      "viewMore": "Ver mais",
+      "viewLess": "Ver menos",
+      "featured": "Destaque",
+      "challenge": "O desafio",
+      "decisions": "Decisões técnicas",
+      "stack": "Stack",
+      "sourceCode": "Código fonte",
+      "close": "Fechar"
     }
   },
   "data": {
     "works": {
       "01": {
-        "category": "SaaS & Automação",
-        "title": "NexusCRM",
-        "description": "CRM fullstack construído para empresas que utilizam o WhatsApp, Instagram e Facebook como principal canal de comunicação. Mensagens em tempo real, gestão de contatos e pipelines, e automação de fluxos de atendimento.",
-        "ctaPrimary": "Saiba mais"
+        "category": "E-commerce",
+        "title": "Dalua.top",
+        "description": "Loja virtual completa para uma marca de cuidados capilares: catálogo, carrinho, checkout com Mercado Pago, frete calculado pelo Melhor Envio e um painel onde a dona gerencia produtos, pedidos, cupons e conteúdo.",
+        "challenge": "A marca precisava vender e entregar sem depender de um desenvolvedor no dia a dia, rodando numa hospedagem já contratada que impunha MySQL sem acesso externo e não conseguia compilar o projeto.",
+        "decisions": [
+          "Banco migrado de Postgres para MySQL com Drizzle, com migrations aplicadas automaticamente no boot do servidor, já que a hospedagem não oferece shell nem conexão externa ao banco.",
+          "Build feito no GitHub Actions com output standalone e publicado numa branch de deploy, porque o servidor da hospedagem não roda o next build.",
+          "Mercado Pago e Melhor Envio conectados por OAuth2 pela própria dona da loja, com tokens criptografados em AES-256-GCM e renovação dentro de uma transação com lock de linha, já que o refresh token é de uso único.",
+          "Painel admin com banners, FAQ, cupons e regras de frete (margem, prazo de manuseio, frete grátis), com imagens convertidas para WebP no servidor e vídeos de depoimento convertidos no próprio navegador."
+        ]
       },
       "02": {
-        "category": "IA & Produtividade",
-        "title": "Speaker Trainer for Business",
-        "description": "Web app com IA para prática deliberada de comunicação profissional em inglês sob pressão. O usuário grava respostas para cenários reais, recebe feedback automático em 5 critérios, regrava e visualiza a evolução entre tentativas.",
-        "ctaPrimary": "Saiba mais"
+        "category": "Produtividade & Colaboração",
+        "title": "Collaborative Text Editor",
+        "description": "Editor de documentos no estilo Google Docs simplificado, com editor rico, autosave, modo convidado e documentos modelados como CRDT para edição simultânea sem conflitos.",
+        "challenge": "Fazer várias pessoas editarem o mesmo documento sem perder nada. O produto é propositalmente simples, para o esforço ficar na engenharia de sincronização e persistência.",
+        "decisions": [
+          "Documento modelado como CRDT com Yjs: o servidor recebe updates binários e faz o merge antes de persistir no MongoDB, então edições concorrentes convergem sem lock e sem last-write-wins.",
+          "Modo convidado: qualquer pessoa começa a escrever sem cadastro, os documentos migram para a conta quando ela se registra, e um job limpa convidados abandonados.",
+          "Autenticação com Better Auth sobre o MongoDB e verificação de e-mail via Resend.",
+          "Monorepo com CI separado para web e server, e um release que só publica se os dois passarem: server no Fly.io e web na Vercel."
+        ]
       },
       "03": {
         "category": "Landing Page",
         "title": "Higher Up Business English",
-        "description": "Landing page para a única empresa no Brasil com metodologia BELF (Business English as a Lingua Franca). Desenvolvida com Next.js com analytics e SEO.",
-        "ctaPrimary": "Visitar site"
+        "description": "Site institucional da única empresa no Brasil com metodologia BELF (Business English as a Lingua Franca), com páginas por solução e público, em português e inglês.",
+        "challenge": "Uma escola de inglês corporativo para executivos precisava de uma presença digital à altura do público, fácil de encontrar no Google e capaz de transformar visitas em contatos.",
+        "decisions": [
+          "Next.js com páginas por solução (empresas, profissionais, startups, professores) e eventos, para cada público cair numa página escrita para ele.",
+          "Bilíngue com next-intl e rotas por idioma, mais metadata, sitemap e robots gerados pela aplicação para o SEO.",
+          "Umami como analytics: mede as visitas sem cookies, então o site não precisa de banner de consentimento.",
+          "Imagem Docker com output standalone, construída e publicada pelo GitHub Actions."
+        ]
       }
     },
     "profissionalExperience": [

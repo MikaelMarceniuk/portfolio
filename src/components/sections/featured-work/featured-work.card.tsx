@@ -1,34 +1,61 @@
 'use client'
 
 import { AnimatedButton } from '@/components/ui/animated-button'
-import { cn, toSlug } from '@/lib/utils'
+import { toSlug } from '@/lib/utils'
 import { FeaturedWork } from '@/types/featured-work.type'
+import { motion } from 'framer-motion'
+import { ArrowUpRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 
+const MAX_CARD_TAGS = 5
+
 type FeaturedWorkCardProps = {
   work: FeaturedWork
-  isEven: boolean
+  showFeaturedBadge: boolean
+  onOpenDetails: () => void
 }
 
 export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
   work,
-  isEven,
+  showFeaturedBadge,
+  onOpenDetails,
 }) => {
   const t = useTranslations('data.works')
+  const tUi = useTranslations('ui.featuredWork')
+
+  const title = t(`${work.id}.title`)
+  const visibleTags = work.tags.slice(0, MAX_CARD_TAGS)
+  const hiddenTagsCount = work.tags.length - visibleTags.length
 
   return (
-    <div
-      className={cn(
-        'card-glow grid w-full grid-cols-1 items-center gap-8 overflow-hidden rounded-xl border border-border bg-card p-6 md:grid-cols-12 md:p-10'
+    <article className="card-glow relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card">
+      {showFeaturedBadge && work.isFeatured && (
+        <motion.span
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="absolute top-4 left-4 z-10 rounded-sm border border-primary/40 bg-background/80 px-2 py-0.5 font-mono text-[10px] tracking-widest text-primary uppercase backdrop-blur-sm"
+        >
+          {tUi('featured')}
+        </motion.span>
       )}
-    >
-      <div
-        className={`order-2 flex flex-col gap-5 md:col-span-7 ${
-          isEven ? 'md:order-last' : 'md:order-first'
-        }`}
+
+      {/* Imagem compartilhada com o modal (layoutId) */}
+      <motion.div
+        layoutId={`work-image-${work.id}`}
+        className="relative aspect-16/10 w-full overflow-hidden bg-background/40"
       >
+        <Image
+          src={work.imageUrl}
+          alt={title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+          className="object-contain p-3"
+        />
+      </motion.div>
+
+      <div className="flex flex-1 flex-col gap-4 p-6">
         {/* ID / Categoria */}
         <div className="flex items-center gap-2 font-mono text-xs tracking-widest text-primary uppercase">
           <span>{work.order}</span>
@@ -36,19 +63,17 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
           <span>{t(`${work.id}.category`)}</span>
         </div>
 
-        {/* Título do Projeto */}
-        <h3 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-          {t(`${work.id}.title`)}
+        <h3 className="font-heading text-2xl font-bold tracking-tight text-foreground">
+          {title}
         </h3>
 
-        {/* Descrição */}
-        <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+        <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">
           {t(`${work.id}.description`)}
         </p>
 
         {/* Tech Stack Badges */}
-        <div className="mt-2 flex flex-wrap gap-2">
-          {work.tags.map((tech) => (
+        <div className="flex flex-wrap gap-2">
+          {visibleTags.map((tech) => (
             <span
               key={tech}
               className="rounded-sm border border-border bg-background/60 px-2.5 py-1 font-mono text-[10px] tracking-wider text-muted-foreground uppercase"
@@ -56,53 +81,38 @@ export const FeaturedWorkCard: React.FC<FeaturedWorkCardProps> = ({
               {tech}
             </span>
           ))}
+          {hiddenTagsCount > 0 && (
+            <span className="px-1 py-1 font-mono text-[10px] tracking-wider text-muted-foreground">
+              +{hiddenTagsCount}
+            </span>
+          )}
         </div>
 
         {/* Botões de Ação */}
-        <div className="mt-4 flex flex-wrap gap-3">
-          {work.ctaPrimary && (
-            <AnimatedButton asChild>
-              <Link
-                href={work.ctaPrimary.hrefTo}
-                target="_blank"
-                className="cursor-pointer rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary shadow-sm transition-all hover:opacity-90"
-                data-umami-event="click_work_cta_primary"
-                data-umami-event-work={toSlug(t(`${work.id}.title`))}
-                data-umami-event-href={work.ctaPrimary.hrefTo}
-              >
-                {t(`${work.id}.ctaPrimary`)}
-              </Link>
-            </AnimatedButton>
-          )}
-          {/* {work.ctaSecondary && (
-            <button
-              className="cursor-pointer rounded-md border border-border bg-transparent px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-secondary"
-              data-umami-event="click_work_cta_secondary"
-              data-umami-event-work={work.id}
+        <div className="mt-auto flex flex-wrap gap-3 pt-2">
+          <button
+            type="button"
+            onClick={onOpenDetails}
+            className="inline-flex cursor-pointer items-center rounded-md border border-border px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+            data-umami-event="click_work_how_its_built"
+            data-umami-event-work={toSlug(title)}
+          >
+            {tUi('howItsBuilt')}
+          </button>
+          <AnimatedButton asChild icon={<ArrowUpRight size={15} />}>
+            <Link
+              href={work.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-umami-event="click_work_see_it_live"
+              data-umami-event-work={toSlug(title)}
+              data-umami-event-href={work.links.live}
             >
-              {work.ctaSecondary}
-            </button>
-          )} */}
+              {tUi('seeItLive')}
+            </Link>
+          </AnimatedButton>
         </div>
       </div>
-
-      <div
-        className={`order-1 flex w-full justify-center md:col-span-5 ${
-          isEven
-            ? 'md:order-first md:justify-start'
-            : 'md:order-last md:justify-end'
-        }`}
-      >
-        <div className="relative aspect-16/10 w-full overflow-hidden">
-          <Image
-            src={work.imageUrl}
-            alt={work.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 40vw, 500px"
-            className="object-contain"
-          />
-        </div>
-      </div>
-    </div>
+    </article>
   )
 }
