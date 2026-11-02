@@ -6,32 +6,22 @@ import { SectionTitle } from '@/components/section-title'
 import { SKILLS_CATEGORIES } from '@/mock/technical-skills'
 import { SkillCard } from './technical-skills.card'
 import { SECTIONS } from '@/constants/section.constants'
+import { useTranslations } from 'next-intl'
 
-type TechnicalSkillsSectionProps = {
-  showProgress?: boolean
-}
+export const TechnicalSkillsSection = () => {
+  const t = useTranslations('rootPage.technicalSkillsSection')
 
-export const TechnicalSkillsSection: React.FC<TechnicalSkillsSectionProps> = ({
-  showProgress = false,
-}) => {
   return (
     <BaseSection id={SECTIONS.TECHNICAL_SKILLS} className="px-6 py-24" isOdd>
       <div className="mx-auto max-w-300">
         <div className="mb-12">
-          <SectionLabel title="Capabilities" />
-          <SectionTitle title="Technical Skills" />
+          <SectionLabel title={t('label')} />
+          <SectionTitle title={t('title')} />
         </div>
 
-        {/* 3 + 2 centered grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SKILLS_CATEGORIES.map((cat, i) => (
-            <SkillCard
-              key={cat.name}
-              category={cat}
-              index={i}
-              showProgress={showProgress}
-              className={i < 3 ? 'lg:col-span-2' : 'lg:col-span-3'}
-            />
+            <SkillCard key={cat.id} category={cat} index={i} />
           ))}
         </div>
       </div>

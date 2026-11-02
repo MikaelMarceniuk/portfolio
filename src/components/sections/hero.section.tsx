@@ -1,7 +1,7 @@
 'use client'
 
-import { Download } from 'lucide-react'
 import { BaseSection } from '../base-section'
+import { DownloadResumeMenu } from './download-resume-menu'
 import { SectionLabel } from '../section-label'
 import { GalaxyBackground } from '../galaxy-background'
 import { AnimatedText } from '../ui/animated-text'
@@ -41,13 +41,7 @@ export const HeroSection = () => {
             <Link href={`#${SECTIONS.ABOUT}`}>{t('cta1')}</Link>
           </AnimatedButton>
 
-          <Link
-            href={`#${SECTIONS.CONTACT}`}
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-transparent px-6 py-3 text-[0.75rem] font-medium tracking-[0.06em] text-foreground no-underline transition-all duration-200 hover:border-muted-foreground hover:bg-muted sm:w-auto sm:justify-start"
-          >
-            {t('cta2')}
-            <Download size={14} />
-          </Link>
+          <DownloadResumeMenu label={t('cta2')} />
         </div>
       </div>
     </BaseSection>

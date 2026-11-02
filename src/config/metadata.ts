@@ -31,6 +31,8 @@ const keywordsEn = [
   'fullstack developer React Node',
   'TypeScript developer remote',
   'NestJS developer',
+  'Java Spring Boot developer',
+  'Spring Boot developer remote',
   // Identity
   'Mikael Marceniuk',
   'mmarceniuk',
@@ -56,6 +58,8 @@ const keywordsPt = [
   'desenvolvedor Next.js',
   'desenvolvedor TypeScript',
   'desenvolvedor NestJS',
+  'desenvolvedor Java',
+  'desenvolvedor Spring Boot',
   'desenvolvedor AWS',
   // Identidade
   'Mikael Marceniuk',
@@ -67,7 +71,7 @@ const content = {
   'en-us': {
     title: 'Mikael Marceniuk | Fullstack Developer',
     description:
-      'Fullstack Developer with 6+ years of experience building web, mobile, and backend systems. Specialized in Node.js, React, Next.js and NestJS with hands-on AWS, Docker and Kubernetes experience.',
+      'Fullstack Developer with 6 years of experience building web, mobile and backend systems in TypeScript (React, Next.js, Node.js, NestJS) and Java/Spring Boot, on AWS.',
     ogDescription:
       'Fullstack Developer with 6+ years of experience building web, mobile, and backend systems at scale.',
     ogLocale: 'en_US',
@@ -77,7 +81,7 @@ const content = {
   'pt-br': {
     title: 'Mikael Marceniuk | Desenvolvedor Fullstack',
     description:
-      'Desenvolvedor Fullstack com mais de 6 anos de experiência construindo sistemas web, mobile e backend. Especializado em Node.js, React, Next.js e NestJS com experiência prática em AWS, Docker e Kubernetes.',
+      'Desenvolvedor Fullstack com 6 anos de experiência construindo sistemas web, mobile e backend em TypeScript (React, Next.js, Node.js, NestJS) e Java/Spring Boot, na AWS.',
     ogDescription:
       'Desenvolvedor Fullstack com mais de 6 anos de experiência construindo sistemas web, mobile e backend em escala.',
     ogLocale: 'pt_BR',

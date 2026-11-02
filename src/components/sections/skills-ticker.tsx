@@ -1,15 +1,19 @@
 const skills = [
+  'TYPESCRIPT',
   'REACT',
   'NEXT.JS',
-  'TYPESCRIPT',
+  'REACT NATIVE',
   'NODE.JS',
+  'NESTJS',
+  'JAVA',
+  'SPRING BOOT',
+  'PYTHON',
   'POSTGRESQL',
+  'MONGODB',
+  'REDIS',
   'AWS',
   'DOCKER',
-  'GRAPHQL',
-  'PRISMA',
   'TAILWIND CSS',
-  'REDIS',
   'CI/CD',
 ]
 

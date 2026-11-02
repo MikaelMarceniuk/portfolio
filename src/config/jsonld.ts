@@ -9,9 +9,9 @@ const jobTitle = {
 
 const description = {
   'en-us':
-    'Fullstack Developer with 6+ years of experience building web, mobile, and backend systems across betting, enterprise automation, and logistics.',
+    'Fullstack Developer with 6 years of experience building web, mobile and backend systems in TypeScript and Java/Spring Boot, across betting, enterprise automation, logistics and multi-tenant scheduling.',
   'pt-br':
-    'Desenvolvedor Fullstack com mais de 6 anos de experiência construindo sistemas web, mobile e backend em setores como apostas, automação empresarial e logística.',
+    'Desenvolvedor Fullstack com 6 anos de experiência construindo sistemas web, mobile e backend em TypeScript e Java/Spring Boot, em setores como apostas, automação empresarial, logística e agendamento multi-tenant.',
 }
 
 export function getJsonLd(locale: AvailableLocales) {
@@ -31,17 +31,19 @@ export function getJsonLd(locale: AvailableLocales) {
       'TypeScript',
       'AWS',
       'Docker',
-      'Kubernetes',
+      'Java',
+      'Spring Boot',
+      'Python',
       'PostgreSQL',
       'React Native',
     ],
     sameAs: [
-      'https://linkedin.com/in/mikael-marceniuk',
-      'https://github.com/mmarceniuk',
+      'https://www.linkedin.com/in/mikael-marceniuk/',
+      'https://github.com/MikaelMarceniuk',
     ],
     worksFor: {
       '@type': 'Organization',
-      name: 'Freelance',
+      name: 'Myp-7 Tecnologia',
     },
     address: {
       '@type': 'PostalAddress',

@@ -1,13 +1,13 @@
 {
   "rootPage": {
     "heroSection": {
-      "label": "Disponível para novas oportunidades",
+      "label": "Disponível para trabalho remoto como PJ",
       "headline": {
         "title": "Mikael Marceniuk",
         "subtitle": "Desenvolvedor Fullstack",
         "description": {
-          "pt1": "Construindo sistemas web, mobile e backend de alto impacto em escala real.",
-          "pt2": "De bilhões de registros a failover em tempo real, engenharia que performa."
+          "pt1": "Sistemas web, mobile e backend, de TypeScript a Java/Spring Boot.",
+          "pt2": "De arquitetura multi-tenant a fallback de provedores que manteve uma plataforma de apostas regulamentada no ar."
         }
       },
       "cta1": "Saiba mais sobre mim",
@@ -15,11 +15,11 @@
     },
     "aboutSection": {
       "label": "Sobre mim",
-      "title": "Construindo sistemas que escalam e geram impacto real.",
+      "title": "Software fácil de mudar com segurança.",
       "description": {
-        "pt1": "Sou desenvolvedor fullstack com mais de 6 anos de experiência entregando sistemas web, mobile e backend nos segmentos de apostas, automação enterprise e logística.",
-        "pt2": "Trabalhei em sistemas que processam bilhões de registros, construí infraestrutura de failover em tempo real em microserviços e entreguei features que geraram crescimento de receita mensurável.",
-        "pt3": "Tenho conforto em assumir ciclos completos de entrega, desde decisões de arquitetura até produção, de forma independente ou em times multifuncionais."
+        "pt1": "Sou desenvolvedor fullstack com 6 anos de experiência construindo sistemas web, mobile e backend, principalmente em TypeScript (React, Next.js, Node.js, NestJS) e, mais recentemente, Java/Spring Boot.",
+        "pt2": "Hoje desenho a arquitetura de uma plataforma de agendamento multi-tenant, onde pesquisei e implementei o isolamento schema-per-tenant com Hibernate. Antes, trabalhei em uma plataforma de apostas regulamentada, desenvolvendo o fallback de provedores e um sistema de indicação que gerou cerca de 10% de crescimento na receita.",
+        "pt3": "Me importo com software fácil de mudar com segurança, por isso introduzi testes automatizados em um time que não tinha nenhum. Aberto a trabalho remoto como PJ."
       }
     },
     "featuredWorkSection": {
@@ -30,10 +30,14 @@
       "label": "Linha do tempo profissional",
       "title": "Experiência profissional"
     },
+    "technicalSkillsSection": {
+      "label": "Competências",
+      "title": "Habilidades Técnicas"
+    },
     "contactSection": {
       "label": "Contato",
       "title": "Vamos trabalhar juntos",
-      "description": "Disponível para projetos freelance e oportunidades full-time, locais ou internacionais. Respondo em até 24 horas."
+      "description": "Aberto a trabalho remoto como PJ. Respondo em até 24 horas."
     }
   },
   "ui": {
@@ -78,7 +82,7 @@
       "01": {
         "category": "E-commerce",
         "title": "Dalua.top",
-        "description": "Loja virtual completa para uma marca de cuidados capilares: catálogo, carrinho, checkout com Mercado Pago, frete calculado pelo Melhor Envio e um painel onde a dona gerencia produtos, pedidos, cupons e conteúdo.",
+        "description": "Loja virtual completa para uma marca de cuidados capilares: catálogo, contas de cliente, carrinho, checkout com Mercado Pago, frete calculado pelo Melhor Envio e um painel onde a dona gerencia produtos, pedidos, cupons e conteúdo.",
         "challenge": "A marca precisava vender e entregar sem depender de um desenvolvedor no dia a dia, rodando numa hospedagem já contratada que impunha MySQL sem acesso externo e não conseguia compilar o projeto.",
         "decisions": [
           "Banco migrado de Postgres para MySQL com Drizzle, com migrations aplicadas automaticamente no boot do servidor, já que a hospedagem não oferece shell nem conexão externa ao banco.",
@@ -90,74 +94,148 @@
       "02": {
         "category": "Produtividade & Colaboração",
         "title": "Collaborative Text Editor",
-        "description": "Editor de documentos no estilo Google Docs simplificado, com editor rico, autosave, modo convidado e documentos modelados como CRDT para edição simultânea sem conflitos.",
+        "description": "Editor de documentos no estilo Google Docs simplificado, feito com a stack MERN, com editor rico, autosave, modo convidado e documentos modelados como CRDT para edição simultânea sem conflitos.",
         "challenge": "Fazer várias pessoas editarem o mesmo documento sem perder nada. O produto é propositalmente simples, para o esforço ficar na engenharia de sincronização e persistência.",
         "decisions": [
-          "Documento modelado como CRDT com Yjs: o servidor recebe updates binários e faz o merge antes de persistir no MongoDB, então edições concorrentes convergem sem lock e sem last-write-wins.",
+          "Documento modelado como CRDT com Yjs: o servidor recebe updates binários via Socket.io e faz o merge antes de persistir no MongoDB, então edições concorrentes convergem sem lock e sem last-write-wins.",
           "Modo convidado: qualquer pessoa começa a escrever sem cadastro, os documentos migram para a conta quando ela se registra, e um job limpa convidados abandonados.",
           "Autenticação com Better Auth sobre o MongoDB e verificação de e-mail via Resend.",
-          "Monorepo com CI separado para web e server, e um release que só publica se os dois passarem: server no Fly.io e web na Vercel."
+          "Monorepo com CI separado para web e server no GitHub Actions, e um release que só publica se os dois passarem: server no Fly.io e web na Vercel."
         ]
       },
       "03": {
         "category": "Landing Page",
         "title": "Higher Up Business English",
-        "description": "Site institucional da única empresa no Brasil com metodologia BELF (Business English as a Lingua Franca), com páginas por solução e público, em português e inglês.",
+        "description": "Site institucional da única empresa no Brasil com metodologia BELF (Business English as a Lingua Franca), com clientes na Europa, nos EUA e no Japão, e páginas por solução e público em português e inglês.",
         "challenge": "Uma escola de inglês corporativo para executivos precisava de uma presença digital à altura do público, fácil de encontrar no Google e capaz de transformar visitas em contatos.",
         "decisions": [
           "Next.js com páginas por solução (empresas, profissionais, startups, professores) e eventos, para cada público cair numa página escrita para ele.",
           "Bilíngue com next-intl e rotas por idioma, mais metadata, sitemap e robots gerados pela aplicação para o SEO.",
           "Umami como analytics: mede as visitas sem cookies, então o site não precisa de banner de consentimento.",
-          "Imagem Docker com output standalone, construída e publicada pelo GitHub Actions."
+          "Publicado na Vercel com Cloudflare e otimizado para carregar em cerca de 1 segundo no mundo todo, já que os clientes estão espalhados pela Europa, EUA e Japão."
         ]
       }
     },
     "profissionalExperience": [
       {
         "id": "01",
-        "period": "Fevereiro/2025 — Maio/2026",
+        "period": "Junho/2026 — Atual",
         "role": "Desenvolvedor Fullstack",
-        "company": "Upbet",
+        "company": "Myp-7 Tecnologia",
         "bullets": [
-          "Entreguei features de alto impacto para uma plataforma de apostas regulamentada no mercado brasileiro, atuando em microserviços, sistemas em tempo real e desenvolvimento fullstack.",
-          "Construí um sistema de failover automático em microserviços na AWS que detecta quedas de provedor e realiza a troca em tempo real, garantindo disponibilidade contínua.",
-          "Atuei em uma migração intercontinental de bilhões de registros da EU para o Brasil usando AWS e Python, garantindo zero perda de dados.",
-          "Desenvolvi um sistema de indicações fullstack em um time de 2 pessoas que gerou aproximadamente 10% de crescimento de receita."
+          "Desenhei a arquitetura de uma plataforma de agendamento multi-tenant como desenvolvedor principal (Java, Spring Boot, Hibernate, PostgreSQL, Flyway).",
+          "Conduzi uma spike comparando as estratégias database-per-tenant, schema-per-tenant e schema compartilhado, e implementei o isolamento schema-per-tenant com CurrentTenantIdentifierResolver e MultiTenantConnectionProvider do Hibernate, mantendo os dados de cada cliente isolados em um único banco.",
+          "Escrevi testes de integração que executam operações de CRUD em todas as tabelas para validar os schemas de tenant criados manualmente antes de entrarem em produção."
         ]
       },
       {
         "id": "02",
-        "period": "Julho/2022 — Fevereiro/2025",
+        "period": "Fevereiro/2025 — Maio/2026",
         "role": "Desenvolvedor Fullstack",
-        "company": "FaliFe Technology and Innovation",
+        "company": "Upbet",
         "bullets": [
-          "Construí e mantive pipelines de automação críticos e sistemas internos para clientes enterprise, eliminando processos manuais e melhorando visibilidade operacional.",
-          "Projetei um pipeline de automação integrando 3 bancos de dados com Lecom, DocuSign e Feedz via REST APIs, reduzindo um processo de 4 dias para 2 horas.",
-          "Construí do zero um sistema fullstack de gestão de ativos com NestJS e Next.js para substituir controle em Excel, entregando relatórios instantâneos."
+          "Desenvolvi o fallback automático de provedores nas integrações de jogos de cassino durante a migração exigida pela regulamentação de apostas de 2024: quando um provedor ficava offline, as requisições eram direcionadas ao próximo disponível, mantendo os jogos no ar. Também desenvolvi uma funcionalidade para gerenciar os provedores de forma dinâmica.",
+          "Desenvolvi de ponta a ponta um sistema de indicação (Python + Next.js) em uma dupla, que gerou cerca de 10% de crescimento na receita.",
+          "Monitorei e validei as funcionalidades da plataforma durante a madrugada na migração de bilhões de registros da Europa para o Brasil."
         ]
       },
       {
         "id": "03",
-        "period": "Junho/2021 — Julho/2022",
+        "period": "Julho/2022 — Fevereiro/2025",
         "role": "Desenvolvedor Fullstack",
-        "company": "Mouts Info",
+        "company": "FaliFe Tecnologia e Inovação",
         "bullets": [
-          "Atuei em múltiplos projetos de clientes incluindo um produto enterprise da AbInBev e um cliente manufatureiro americano, entregando features fullstack e infraestrutura de dados de forma independente.",
-          "Ingressei em um projeto da AbInBev com 1 mês de atraso como único desenvolvedor fullstack, realizei onboarding em 2 semanas e recuperei o prazo em 1 mês.",
-          "Arquitetei uma fila de mensagens na AWS para processar milhões de registros Excel de forma assíncrona, evitando bloqueio da API sob alta carga, entregue solo em 2 semanas."
+          "Desenvolvi e mantive rotinas diárias de automação integrando 3 bancos de dados (PostgreSQL, SQL Server) ao Lecom (plataforma de BPM), DocuSign e Feedz (plataforma de RH) via APIs REST, reduzindo um processo de 4 dias para 2 horas.",
+          "Desenvolvi do zero um sistema de gestão de ativos (NestJS + Next.js) para uma equipe de 8 pessoas, substituindo duas planilhas de controle e histórico de mais de 300 ativos; relatórios que levavam 2 a 3 dias de consolidação manual passaram a ser gerados em menos de 1 minuto.",
+          "Introduzi testes unitários e de integração com Jest após regressões recorrentes a cada atualização dos processos no Lecom."
         ]
       },
       {
         "id": "04",
+        "period": "Junho/2021 — Julho/2022",
+        "role": "Desenvolvedor Fullstack",
+        "company": "Mouts Info",
+        "bullets": [
+          "Entrei em um projeto da AB InBev como único desenvolvedor fullstack de uma equipe de 6 pessoas com um mês de atraso; entreguei funcionalidades em React + Express.js que colocaram o projeto de volta no cronograma em um mês.",
+          "Desenvolvi sozinho, em 2 semanas, um pipeline que importava milhões de linhas de Excel para um banco relacional para um cliente industrial dos EUA, usando AWS SQS para processamento assíncrono em lotes, mantendo a API responsiva.",
+          "Publiquei novos microsserviços no Kubernetes e configurei a rede deles junto com o tech lead."
+        ]
+      },
+      {
+        "id": "05",
         "period": "Junho/2020 — Junho/2021",
         "role": "Desenvolvedor Fullstack",
         "company": "Myp-7 Tecnologia",
         "bullets": [
-          "Ingressei como único desenvolvedor React Native em uma empresa de 5 pessoas e fui promovido a fullstack em 1 mês, assumindo entrega mobile e web de um produto de gestão de atacados.",
-          "Desenvolvi uma feature mobile de gestão de estoque integrando leitura de QR Code e reconhecimento de voz para eliminar contagem manual.",
-          "Desenvolvi um sistema fullstack de registro de avarias em React e Java/Spring Boot com integração AWS, permitindo rastreamento de caminhões em tempo real e registro de avarias via fotos."
+          "Entrei como único desenvolvedor React Native de uma empresa de 5 pessoas e passei a atuar como fullstack em um mês.",
+          "Desenvolvi uma funcionalidade mobile de inventário com leitura de QR Code e reconhecimento de voz para um grande distribuidor atacadista, substituindo a contagem manual de estoque.",
+          "Desenvolvi um sistema de registro de avarias (React + Spring Boot na AWS) que permitia às equipes do armazém acompanhar as cargas recebidas e registrar produtos danificados com fotos.",
+          "Implantei o primeiro pipeline de CI/CD da empresa com Jenkins."
         ]
       }
-    ]
+    ],
+    "technicalSkills": {
+      "languages": {
+        "name": "Linguagens",
+        "skills": [
+          "TypeScript",
+          "JavaScript",
+          "Python",
+          "Java"
+        ]
+      },
+      "frontend": {
+        "name": "Frontend e Mobile",
+        "skills": [
+          "React",
+          "Next.js",
+          "React Native",
+          "Tailwind CSS"
+        ]
+      },
+      "backend": {
+        "name": "Backend",
+        "skills": [
+          "Node.js / Bun",
+          "NestJS / Express.js",
+          "Elysia",
+          "Spring Boot / Hibernate",
+          "Socket.io"
+        ]
+      },
+      "databases": {
+        "name": "Bancos de Dados",
+        "skills": [
+          "PostgreSQL",
+          "MySQL",
+          "SQL Server",
+          "MongoDB",
+          "Redis",
+          "Drizzle / Prisma",
+          "Flyway"
+        ]
+      },
+      "cloud": {
+        "name": "Cloud e DevOps",
+        "skills": [
+          "AWS (SQS)",
+          "Docker",
+          "Vercel / Cloudflare",
+          "Jenkins",
+          "GitHub Actions"
+        ]
+      },
+      "testingArchitecture": {
+        "name": "Testes e Arquitetura",
+        "skills": [
+          "Jest",
+          "Testes unitários e de integração",
+          "Microsserviços",
+          "APIs REST",
+          "Filas de mensagens",
+          "Multi-tenancy"
+        ]
+      }
+    }
   }
 }

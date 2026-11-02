@@ -32,12 +32,13 @@ export const WORK_DATA: FeaturedWork[] = [
       'MERN',
       'React',
       'Yjs (CRDT)',
+      'Socket.io',
       'Tiptap',
       'Express',
       'MongoDB',
       'Better Auth',
       'Vite',
-      'CI/CD',
+      'GitHub Actions',
     ],
     links: {
       live: 'https://collaborative-text-editor.mmarceniuk.dev/',
@@ -50,7 +51,7 @@ export const WORK_DATA: FeaturedWork[] = [
     id: '03',
     order: 3,
     kind: 'freelance',
-    tags: ['Next.js', 'next-intl', 'SEO', 'Umami', 'Docker', 'GitHub Actions'],
+    tags: ['Next.js', 'next-intl', 'SEO', 'Vercel', 'Cloudflare', 'Umami'],
     links: {
       live: 'https://higher-up.com.br/',
     },
